@@ -14,7 +14,7 @@ int main() {
     if (total_price > n) {
         ans = total_price - n;
     } else {
-        total_price = ans;
+        ans = 0;
     }
 
     cout << ans << endl;
