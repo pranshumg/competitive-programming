@@ -31,8 +31,7 @@ void print19(int n) {
             cout << "*";
         }
         cout << endl;
-    }
-    
+    }    
 }
 
 int main() {
