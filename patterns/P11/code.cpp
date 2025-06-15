@@ -10,7 +10,7 @@ void print11(int n) {
             num = 0;
         }
         for (int j = 0; j <= i; j++) {
-            cout << num << " ";
+            cout << num;
             if (num == 1) {
                 num = 0;
             } else {
