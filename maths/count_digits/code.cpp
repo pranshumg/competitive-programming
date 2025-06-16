@@ -13,7 +13,7 @@ int count_digits_1(int n) {
 
 // Method 2
 int count_digits_2(int n) {
-    int count = (int)log10(n) + 1;
+    int count = (int)(log10(n) + 1);
     return count;
 }
 
@@ -21,7 +21,7 @@ int main() {
     int n;
     cin >> n;
     int ans1 = count_digits_1(n), ans2 = count_digits_2(n);
-    cout << "Method 1:" << ans1 << endl;
-    cout << "Method 2:" << ans2 << endl;
+    cout << "Method 1: " << ans1 << endl;
+    cout << "Method 2: " << ans2 << endl;
     return 0;
 }
