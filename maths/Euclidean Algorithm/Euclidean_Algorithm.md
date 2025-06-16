@@ -22,17 +22,16 @@ The **Euclidean algorithm** is an efficient method for computing the **greatest 
 
 Let's find the GCD of **48** and **18** using the Euclidean algorithm:
 
-- \( 48 \div 18 = 2 \) remainder **12**  
-  → \( 48 = 2 \times 18 + 12 \)
+- 48 divided by 18 has a quotient of 2 and a remainder of 12  
+  *(48 = 2 × 18 + 12)*
 
-- Replace 48 with 18, and 18 with 12:  
-  \( 18 \div 12 = 1 \) remainder **6**  
-  → \( 18 = 1 \times 12 + 6 \)
+- Replace 48 with 18, and 18 with 12  
+  *(18 = 1 × 12 + 6)*
 
-- Replace 18 with 12, and 12 with 6:  
-  \( 12 \div 6 = 2 \) remainder **0**  
-  → \( 12 = 2 \times 6 + 0 \)
+- Replace 18 with 12, and 12 with 6  
+  *(12 = 2 × 6 + 0)*
 
-The remainder is now 0, so the **GCD is the last non-zero remainder**, which is **6**.
+The remainder is now 0, so the GCD is the last non-zero remainder, which is 6.  
 
 **Therefore, the GCD of 48 and 18 is 6.**
+
