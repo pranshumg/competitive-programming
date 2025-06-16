@@ -21,7 +21,7 @@ int main() {
     int n;
     cin >> n;
     int ans1 = count_digits_1(n), ans2 = count_digits_2(n);
-    cout << "By Method 1:" << ans1 << endl;
-    cout << "By Method 2:" << ans2 << endl;
+    cout << "Method 1:" << ans1 << endl;
+    cout << "Method 2:" << ans2 << endl;
     return 0;
 }
