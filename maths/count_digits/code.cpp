@@ -2,7 +2,7 @@
 using namespace std;
 
 // Method 1
-int count_digits_1(int n) {
+int func1(int n) {
     int count = 0;
     while (n > 0) {
         count++;
@@ -12,7 +12,7 @@ int count_digits_1(int n) {
 }
 
 // Method 2
-int count_digits_2(int n) {
+int func2(int n) {
     int count = (int)(log10(n) + 1);
     return count;
 }
@@ -20,7 +20,7 @@ int count_digits_2(int n) {
 int main() {
     int n;
     cin >> n;
-    int ans1 = count_digits_1(n), ans2 = count_digits_2(n);
+    int ans1 = func1(n), ans2 = func2(n);
     cout << "Method 1: " << ans1 << endl;
     cout << "Method 2: " << ans2 << endl;
     return 0;
