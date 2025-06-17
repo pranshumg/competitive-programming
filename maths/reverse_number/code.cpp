@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int reverse_number(int n) {
+int func(int n) {
     int rev_n = 0;
     while (n > 0) {
         int ld = n % 10;
@@ -14,7 +14,7 @@ int reverse_number(int n) {
 int main() {
     int n;
     cin >> n;
-    int ans = reverse_number(n);
+    int ans = func(n);
     cout << ans << endl;
     return 0;
 }
