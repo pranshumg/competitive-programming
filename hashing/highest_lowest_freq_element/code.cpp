@@ -6,7 +6,7 @@ void func(int arr[], int n) {
     for (int i = 0; i < n; i++) mpp[arr[i]]++;
 
     int max_freq = 0, min_freq = n;
-    int max_ele = INT_MIN, min_ele = INT_MAX;
+    int max_ele = 0, min_ele = 0;
     for (auto it : mpp) {
         int element = it.first;
         int count = it.second;
