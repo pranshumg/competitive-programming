@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void prime_number(int n) {
+void func(int n) {
     int count = 0;
     for (int i = 1; i * i <= n; i++) {
         if (n % i == 0) {
@@ -16,6 +16,6 @@ void prime_number(int n) {
 int main() {
     int n;
     cin >> n;
-    prime_number(n);
+    func(n);
     return 0;
 }
