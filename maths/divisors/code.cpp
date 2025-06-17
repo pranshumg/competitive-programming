@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void print_divisors(int n) {
+void func(int n) {
     vector<int> vec;
     for (int i = 1; i * i <= n; i++) {
         if (n % i == 0) {
@@ -16,6 +16,6 @@ void print_divisors(int n) {
 int main() {
     int n;
     cin >> n;
-    print_divisors(n);
+    func(n);
     return 0;
 }
