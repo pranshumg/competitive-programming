@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void palindrome_number(int n) {
+void func(int n) {
     int og_n = n, rev_n = 0;
     while (n > 0) {
         int ld = n % 10;
@@ -15,6 +15,6 @@ void palindrome_number(int n) {
 int main() {
     int n;
     cin >> n;
-    palindrome_number(n);
+    func(n);
     return 0;
 }
