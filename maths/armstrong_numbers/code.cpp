@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void armstrong_number(int n) {
+void func(int n) {
     int og_n = n, count = 0;
     while (n > 0) {
         count++;
@@ -21,6 +21,6 @@ void armstrong_number(int n) {
 int main() {
     int n;
     cin >> n;
-    armstrong_number(n);
+    func(n);
     return 0;
 }
