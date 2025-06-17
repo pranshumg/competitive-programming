@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void print_name_n_times(int n) {
+void func(int n) {
     if (n == 0) return;
     cout << "Pranshu" << endl;
-    print_name_n_times(n - 1);
+    func(n - 1);
 }
 
 int main() {
     int n;
     cin >> n; 
-    print_name_n_times(n);
+    func(n);
     return 0;
 }
