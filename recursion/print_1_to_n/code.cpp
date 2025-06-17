@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void print_1_to_n(int n) {
+void func(int n) {
     if (n == 0) return;
-    print_1_to_n(n - 1);
+    func(n - 1);
     cout << n << " "; 
 }
 
 int main() {
     int n;
     cin >> n; 
-    print_1_to_n(n);
+    func(n);
     return 0;
 }   
