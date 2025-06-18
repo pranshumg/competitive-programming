@@ -34,7 +34,7 @@ int main() {
     return 0;
 }
 
-// Brute-Force approach(Using two loops): 
+// Brute-Force approach: 
 
 /*
 #include <bits/stdc++.h>
