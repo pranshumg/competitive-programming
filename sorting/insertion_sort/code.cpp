@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void insertion_sort(int arr[], int n) {
+void insertion_sort(vector<int> &vec, int n) {
     for (int i = 0; i < n; i++) {
         int j = i;
-        while (j > 0 && arr[j - 1] > arr[j]) {
-            swap(arr[j - 1], arr[j]);
+        while (j > 0 && vec[j - 1] > vec[j]) {
+            swap(vec[j - 1], vec[j]);
             j--;
         }
     }
@@ -14,9 +14,9 @@ void insertion_sort(int arr[], int n) {
 int main() {
     int n;
     cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
-    insertion_sort(arr, n);
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    vector<int> vec(n);
+    for (int i = 0; i < n; i++) cin >> vec[i];
+    insertion_sort(vec, n);
+    for (auto it : vec) cout << it << " ";
     return 0;
 }

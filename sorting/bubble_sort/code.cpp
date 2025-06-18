@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void bubble_sort(int arr[], int n) {
+void bubble_sort(vector<int> &vec, int n) {
     for (int i = 0; i < n - 1; i++) {
         int did_swap = 0;
         for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j + 1] < arr[j]) {
-                swap(arr[j], arr[j + 1]);
+            if (vec[j + 1] < vec[j]) {
+                swap(vec[j], vec[j + 1]);
                 did_swap = 1;
             }
         }
@@ -17,9 +17,9 @@ void bubble_sort(int arr[], int n) {
 int main() {
     int n;
     cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
-    bubble_sort(arr, n);
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    vector<int> vec(n);
+    for (int i = 0; i < n; i++) cin >> vec[i];
+    bubble_sort(vec, n);
+    for (auto it : vec) cout << it << " ";
     return 0;
 }
