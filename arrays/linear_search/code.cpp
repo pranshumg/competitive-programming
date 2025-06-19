@@ -6,7 +6,6 @@ int linear_search(vector<int> &vec, int n, int k) {
     return -1;
 }
 
-
 int main() {
     int n;
     cin >> n;
