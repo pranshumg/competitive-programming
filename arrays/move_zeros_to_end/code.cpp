@@ -21,8 +21,6 @@ int main() {
     cin >> n;
     vector<int> vec(n);
     for (int i = 0; i < n; i++) cin >> vec[i];
-    int k;
-    cin >> k;
     move_zeros_to_end(vec, n);
     for (auto it : vec) cout << it << " ";
     return 0;
@@ -46,8 +44,6 @@ int main() {
     cin >> n;
     vector<int> vec(n);
     for (int i = 0; i < n; i++) cin >> vec[i];
-    int k;
-    cin >> k;
     move_zeros_to_end(vec, n);
     for (auto it : vec) cout << it << " ";
     return 0;
