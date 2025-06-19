@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> union_of_two_arrays(vector<int> &vec1, int n1, vector<int> &vec2, int n2) {
+vector<int> union_of_sorted_arrays(vector<int> &vec1, int n1, vector<int> &vec2, int n2) {
     int i = 0, j = 0;
     vector<int> union_vec;
     while (i < n1 && j < n2) {
@@ -35,7 +35,7 @@ int main() {
     cin >> n2;
     vector<int> vec2(n2);
     for (int i = 0; i < n2; i++) cin >> vec2[i];
-    vector<int> union_vec = union_of_two_arrays(vec1, n1, vec2, n2);
+    vector<int> union_vec = union_of_sorted_arrays(vec1, n1, vec2, n2);
     for (auto it : union_vec) cout << it << " ";
     return 0;
 }
@@ -46,7 +46,7 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> union_of_two_arrays(vector<int> &vec1, int n1, vector<int> &vec2, int n2) {
+vector<int> union_of_sorted_arrays(vector<int> &vec1, int n1, vector<int> &vec2, int n2) {
     set<int> st;
     for (int i = 0; i < n1; i++) st.insert(vec1[i]);
     for (int i = 0; i < n2; i++) st.insert(vec2[i]); 
@@ -64,7 +64,7 @@ int main() {
     cin >> n2;
     vector<int> vec2(n2);
     for (int i = 0; i < n2; i++) cin >> vec2[i];
-    vector<int> union_vec = union_of_two_arrays(vec1, n1, vec2, n2);
+    vector<int> union_vec = union_of_sorted_arrays(vec1, n1, vec2, n2);
     for (auto it : union_vec) cout << it << " ";
     return 0;
 }
