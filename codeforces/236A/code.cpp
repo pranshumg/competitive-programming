@@ -4,31 +4,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main() { 
     string s;
     cin >> s;
-
-    string ans = "";  
-    for (int i = 0; i < s.length(); i++) {
-        bool found = false;
-
-        for (int j = 0; j < ans.length(); j++) {
-            if (s[i] == ans[j]) {
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
-            ans += s[i];
-        }  
-    }
-
-    if (ans.length() % 2 != 0) {
-        cout << "IGNORE HIM!" << endl;
-    } else {
-        cout << "CHAT WITH HER!" << endl;
-    }
-
+    set<char> st;
+    for (int i = 0; i < s.size(); i++) st.insert(s[i]);
+    if (st.size() % 2 == 0) cout << "CHAT WITH HER!";
+    else cout << "IGNORE HIM!";
     return 0;
 }
