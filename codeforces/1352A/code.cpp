@@ -5,13 +5,13 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int t;
     cin >> t;
-
     while (t--) {
         int n, k = 0;
         cin >> n;
-
         vector<int> ans;
         int z = 10;
         while (n != 0) {
@@ -19,20 +19,17 @@ int main() {
                 z *= 10;
             } else {
                 int rn = n % z;
-                ans.push_back(rn);
+                ans.emplace_back(rn);
                 n -= rn;
                 z *= 10;
                 k++;
             }
         }
-
-        cout << k << endl;
-
+        cout << k << '\n';
         for (int val : ans) {
             cout << val << " ";          
         }
-        cout << endl;
+        cout << '\n';
     }
-
     return 0;
 }

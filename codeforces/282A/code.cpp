@@ -5,6 +5,8 @@
 using namespace std;
  
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int x = 0, n;
     string op;
     cin >> n;
@@ -21,6 +23,5 @@ int main() {
         }
     }   
     cout << x;
- 
     return 0;
 }

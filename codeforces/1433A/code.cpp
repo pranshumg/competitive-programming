@@ -5,14 +5,14 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int t;
     cin >> t;
-
     int ans;
     while (t--) {
         string s;
         cin >> s;
-
         if (s[0] == '1') {
             ans = 0;
             if (s.length() == 1) {
@@ -113,9 +113,7 @@ int main() {
                 ans += 10;
             }
         }
-
-        cout << ans << endl;
-    }
-    
+        cout << ans << '\n';
+    } 
     return 0;
 }

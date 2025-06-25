@@ -5,9 +5,10 @@
 using namespace std;
  
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int row, col;
     cin >> row >> col;
- 
     for (int i = 1; i <= row; i++) {
         if (i % 2 != 0) {
             for (int j = 1; j <= col; j++) {
@@ -24,9 +25,7 @@ int main() {
             }
             cout << "#";
         }
- 
-        cout << endl;
+        cout << '\n';
     }
- 
     return 0;
 }

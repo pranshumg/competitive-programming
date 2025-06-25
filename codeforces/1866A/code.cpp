@@ -5,6 +5,8 @@
 using namespace std;
 
 int main() { 
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n;
     cin >> n;
     vector<int> vec(n);
@@ -15,6 +17,5 @@ int main() {
         else if (vec[i] < 0 && ((0 - vec[i]) < num)) num = -(vec[i]);
     }
     cout << num;
-
     return 0;
 }

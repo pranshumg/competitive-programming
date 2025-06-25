@@ -17,11 +17,12 @@ int func(int n) {
 }
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n;
     string s;
     cin >> n;
     cin >> s;
-
     for (int i = 0; i < n; i++) {
         if (func(i) < s.size()) {
             cout << s[func(i)];
@@ -29,8 +30,6 @@ int main() {
             break;
         }
     }
-
-    cout << endl;
-    
+    cout << '\n';  
     return 0;
 }

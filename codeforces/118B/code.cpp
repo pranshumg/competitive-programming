@@ -5,9 +5,10 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n;
     cin >> n;
-
     int i, j, k, l;
     for (i = 0; i < n; i++) {
         for (j = 0; j < n - i; j++) {
@@ -26,9 +27,8 @@ int main() {
                 cout << " ";
             }
         }
-        cout << endl;
+        cout << '\n';
     }
-
     for (i = 0; i < n; i++) {
         cout << i << " ";
     }
@@ -39,8 +39,7 @@ int main() {
             cout << " ";
         }
     }
-    cout << endl;
-
+    cout << '\n';
     int m = n;
     for (i = 0; i < n; i++) {
         for (j = 0; j <= i; j++) {
@@ -60,8 +59,7 @@ int main() {
             }
         }
         m -= 1;
-        cout << endl;
+        cout << '\n';
     }
-
     return 0;
 }

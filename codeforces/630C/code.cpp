@@ -5,16 +5,15 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n;
     cin >> n;
-
     int i = 1;
     long long ans = 0;
     while (i <= n) {
         ans += pow(2, i++);
     }
-
-    cout << ans << endl;
-
+    cout << ans << '\n';
     return 0;
 }

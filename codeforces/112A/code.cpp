@@ -5,6 +5,8 @@
 using namespace std;
  
 int main() { 
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     string s1, s2;
     cin >> s1 >> s2;
     for (int i = 0; i < s1.size(); i++) {
@@ -14,6 +16,5 @@ int main() {
     if (s1 < s2) cout << -1;
     else if (s2 < s1) cout << 1;
     else cout << 0;
- 
     return 0;
 }
