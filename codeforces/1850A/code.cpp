@@ -1,0 +1,20 @@
+/**
+ *   author: pranshumg
+**/
+#include <bits/stdc++.h> 
+using namespace std;
+ 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--) {
+        vector<int> vec(3);
+        for (int i = 0; i < 3; i++) cin >> vec[i];
+        sort(vec.begin(), vec.end());
+        if (vec[1] + vec[2] >= 10) cout << "YES\n";
+        else cout << "NO\n";
+    }
+    return 0;
+}
