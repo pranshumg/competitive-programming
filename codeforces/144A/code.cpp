@@ -2,6 +2,7 @@
  *   author: pranshumg
 **/
 #include <bits/stdc++.h>
+
 using namespace std;
 
 vector<int> largest_smallest(vector<int> &vec, int n) {
