@@ -27,8 +27,8 @@ int main() {
             }
         }
         cout << k << '\n';
-        for (int val : ans) {
-            cout << val << " ";          
+        for (auto it : ans) {
+            cout << it << " ";          
         }
         cout << '\n';
     }
