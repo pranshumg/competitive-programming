@@ -10,12 +10,12 @@ int main() {
     cin.tie(nullptr);
     int n, t;
     cin >> n >> t;
-    vector<int> vec(n - 1);
-    for (int i = 0; i < n - 1; i++) cin >> vec[i];
+    vector<int> v(n - 1);
+    for (int i = 0; i < n - 1; i++) cin >> v[i];
     int flag = 0;
     int sum = 1;
     while (sum < n) {
-        sum += vec[sum - 1];
+        sum += v[sum - 1];
         if (t == sum) {
             flag = 1;
             break;
