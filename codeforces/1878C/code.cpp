@@ -11,10 +11,10 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        long long n, k, x;
+        int64_t n, k, x;
         cin >> n >> k >> x;
-        long long  min_sum = (k * (k + 1)) / 2;
-        long long max_sum = (n * (n + 1)) / 2 - ((n - k) * (n - k + 1)) / 2;
+        int64_t  min_sum = (k * (k + 1)) / 2;
+        int64_t max_sum = (n * (n + 1)) / 2 - ((n - k) * (n - k + 1)) / 2;
         if (x >= min_sum && x <= max_sum)
             cout << "YES\n";
         else 
