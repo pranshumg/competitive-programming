@@ -13,16 +13,16 @@ int main() {
     while (t--) {
         int a, b, n;
         cin >> a >> b >> n;
-        int count = 0;
+        int cnt = 0;
         while (a <= n && b <= n) {
             if (a < b) {
                 a += b;
             } else {
                 b += a;
             }
-            count++;
+            cnt++;
         }
-        cout << count << '\n';
+        cout << cnt << '\n';
     }
     return 0;
 }
