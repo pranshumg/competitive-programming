@@ -10,29 +10,29 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
     int i = 0, sum_s = 0, sum_d = 0;
-    while (vec.size() != 0) {
+    while (v.size() != 0) {
         if (i % 2 == 0) {
-            if (vec[0] < vec[n - 1]) {
-                sum_s += vec[n - 1];
-                vec.erase(vec.end() - 1);
-                n = vec.size();
+            if (v[0] < v[n - 1]) {
+                sum_s += v[n - 1];
+                v.erase(v.end() - 1);
+                n = v.size();
             } else {
-                sum_s += vec[0];
-                vec.erase(vec.begin());
-                n = vec.size();
+                sum_s += v[0];
+                v.erase(v.begin());
+                n = v.size();
             }
         } else {
-            if (vec[0] < vec[n - 1]) {
-                sum_d += vec[n - 1];
-                vec.erase(vec.end() - 1);
-                n = vec.size();
+            if (v[0] < v[n - 1]) {
+                sum_d += v[n - 1];
+                v.erase(v.end() - 1);
+                n = v.size();
             } else {
-                sum_d += vec[0];
-                vec.erase(vec.begin());
-                n = vec.size();
+                sum_d += v[0];
+                v.erase(v.begin());
+                n = v.size();
             }
         }
         i++;
