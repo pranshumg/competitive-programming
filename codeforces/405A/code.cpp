@@ -10,9 +10,9 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    sort(vec.begin(), vec.end());
-    for (auto it : vec) cout << it << " ";
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    sort(v.begin(), v.end());
+    for (auto it : v) cout << it << " ";
     return 0;
 }
