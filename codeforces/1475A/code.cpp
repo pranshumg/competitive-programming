@@ -11,7 +11,7 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        long long n;
+        int64_t n;
         cin >> n;
         if ((n & (n - 1)) == 0) {
             cout << "NO\n";
