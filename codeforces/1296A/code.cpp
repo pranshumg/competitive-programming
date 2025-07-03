@@ -13,13 +13,13 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        int arr[2000], sum = 0, o = 0, e = 0;
+        int a[2000], sum = 0, o = 0, e = 0;
         for (int i = 0; i < n; i++) {
-            cin >> arr[i];
-            if (arr[i] % 2 == 0) {
+            cin >> a[i];
+            if (a[i] % 2 == 0) {
                 e++;
             } else {
-                sum += arr[i];
+                sum += a[i];
                 o++;
             }
         }
