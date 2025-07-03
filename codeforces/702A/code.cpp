@@ -10,11 +10,11 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
     int len = 1, max_len = 1;
     for (int i = 1; i < n; i++) {
-        if (vec[i] > vec[i - 1]) {
+        if (v[i] > v[i - 1]) {
             len++;
         } else {
             len = 1;
