@@ -10,13 +10,13 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<long long> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    long long sum = vec[n - 1];  
+    vector<int64_t> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    long long sum = v[n - 1];  
     int i = n - 2;
     while (i >= 0) {
-        if (vec[i] >= vec[i + 1]) vec[i] = vec[i + 1] - 1;  
-        if (vec[i] >= 0) sum += vec[i];
+        if (v[i] >= v[i + 1]) v[i] = v[i + 1] - 1;  
+        if (v[i] >= 0) sum += v[i];
         i--;
     }
     cout << sum;
