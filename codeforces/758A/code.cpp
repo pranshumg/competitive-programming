@@ -10,12 +10,12 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int max = *(max_element(vec.begin(), vec.end()));
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    int max = *(max_element(v.begin(), v.end()));
     int ans = 0;
     for (int i = 0; i < n; i++) {
-        ans += (max - vec[i]);
+        ans += (max - v[i]);
     }
     cout << ans;
     return 0;
