@@ -10,12 +10,12 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n - 1);
+    vector<int> v(n - 1);
     for (int i = 0; i < n - 1; i++)
-        cin >> vec[i];
-    sort(vec.begin(), vec.end());
+        cin >> v[i];
+    sort(v.begin(), v.end());
     for (int i = 0; i < n - 1; i++) {
-        if (vec[i] != i + 1) {
+        if (v[i] != i + 1) {
             cout << i + 1;
             return 0;
         }
