@@ -13,11 +13,11 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vector<int> vec(n);
-        for (int i = 0; i < n; i++) cin >> vec[i];
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
         int ans = 0, count = 0;
         for (int i = 0; i < n; i++) {
-            if (vec[i] == 0) {
+            if (v[i] == 0) {
                 count++;
                 if (count > ans) ans = count;
             }
