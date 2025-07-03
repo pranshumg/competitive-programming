@@ -11,7 +11,7 @@ int main() {
     int n;
     cin >> n;
     int i = 1;
-    long long ans = 0;
+    int64_t ans = 0;
     while (i <= n) {
         ans += pow(2, i++);
     }
