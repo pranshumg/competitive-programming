@@ -10,13 +10,13 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(3 * n);
-    for (int i = 0; i < 3 * n; i++) cin >> vec[i];
+    vector<int> v(3 * n);
+    for (int i = 0; i < 3 * n; i++) cin >> v[i];
     int sum_x = 0, sum_y = 0, sum_z = 0;
     for (int i = 0; i < (3 * n) - 2; i += 3) {
-        sum_x += vec[i];
-        sum_y += vec[i + 1];
-        sum_z += vec[i + 2];
+        sum_x += v[i];
+        sum_y += v[i + 1];
+        sum_z += v[i + 2];
     }
     if (sum_x == 0 && sum_y == 0 && sum_z == 0) cout << "YES";
     else cout << "NO";
