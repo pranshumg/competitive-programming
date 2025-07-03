@@ -13,17 +13,17 @@ int main() {
     set<int> st;
     int p;
     cin >> p;
-    vector<int> vec1(p);
+    vector<int> v1(p);
     for (int i = 0; i < p; i++) {
-        cin >> vec1[i];
-        st.insert(vec1[i]);
+        cin >> v1[i];
+        st.insert(v1[i]);
     }
     int q;
     cin >> q;
-    vector<int> vec2(q);
+    vector<int> v2(q);
     for (int i = 0; i < q; i++) {
-        cin >> vec2[i];
-        st.insert(vec2[i]);
+        cin >> v2[i];
+        st.insert(v2[i]);
     }
     if (st.size() == n) cout << "I become the guy.";
     else cout << "Oh, my keyboard!";
