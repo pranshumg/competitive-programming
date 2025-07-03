@@ -10,13 +10,13 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(7);
+    vector<int> v(7);
     for (int i = 0; i < 7; i++) {
-        cin >> vec[i];
+        cin >> v[i];
     }
     int sum = 0, day = 0, ans;
     while (sum != n) {
-        sum += vec[day];
+        sum += v[day];
         if (sum >= n) {
             ans = day + 1;
             break;
