@@ -6,8 +6,6 @@
 using namespace std;
 
 int func(int n) {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
     int i = 1, result = 0;
     while (i <= n) {
         result += i;
@@ -16,6 +14,8 @@ int func(int n) {
     return result;
 }
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n;
     cin >> n;
     int j = 0, ans = 0, i = 1;
