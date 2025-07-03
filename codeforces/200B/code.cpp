@@ -10,11 +10,11 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
+    vector<int> v(n);
     float sum = 0.0;
     for (int i = 0; i < n; i++) {
-        cin >> vec[i];
-        sum += vec[i];
+        cin >> v[i];
+        sum += v[i];
     }
     cout << sum / n;
     return 0;
