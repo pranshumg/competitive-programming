@@ -12,10 +12,10 @@ int main() {
     cin >> t;
     while (t--) {
         int ans = 0;
-        vector<int> vec(3);
+        vector<int> v(3);
         for (int i = 0; i < 3; i++) {
-            cin >> vec[i];
-            ans ^= vec[i];
+            cin >> v[i];
+            ans ^= v[i];
         }
         cout << ans << '\n';
     }
