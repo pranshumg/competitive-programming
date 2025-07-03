@@ -13,10 +13,10 @@ int main() {
     while (t--) {
         int n, k;
         cin >> n >> k;
-        vector<int> vec(n);
-        for (int i = 0; i < n; i++) cin >> vec[i];
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
         bool flag = false;
-        for (auto it : vec) {
+        for (auto it : v) {
             if (it == k) {
                 flag = true;
                 break;
