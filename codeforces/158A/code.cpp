@@ -10,10 +10,10 @@ int main() {
     cin.tie(nullptr);
     int n, k; 
     cin >> n >> k;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
     int ans = 0;
-    for (int i = 0; i < n; i++) if (vec[i] > 0 && vec[i] >= vec[k - 1]) ans++;
+    for (int i = 0; i < n; i++) if (v[i] > 0 && v[i] >= v[k - 1]) ans++;
     cout << ans;
     return 0;
 }
