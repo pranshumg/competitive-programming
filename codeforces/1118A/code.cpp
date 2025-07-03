@@ -11,7 +11,7 @@ int main() {
     int q;
     cin >> q;
     while (q--) {
-        long long n;
+        int64_t n;
         int a, b;
         cin >> n >> a >> b;
         cout << (n / 2) * min(2 * a, b) + (n % 2) * a << '\n'; 
