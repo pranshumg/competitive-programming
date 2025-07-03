@@ -13,15 +13,15 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vector<int> vec(n);
-        for (int i = 0; i < n; i++) cin >> vec[i];
-        sort(vec.begin(), vec.end());
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
+        sort(v.begin(), v.end());
         int i = 0;
-        while (i < vec.size() - 1) {
-            if (vec[i + 1] - vec[i] <= 1) vec.erase(vec.begin() + i);
+        while (i < v.size() - 1) {
+            if (v[i + 1] - v[i] <= 1) v.erase(v.begin() + i);
             else i++;
         }
-        if (vec.size() == 1) cout << "YES" << '\n';
+        if (v.size() == 1) cout << "YES" << '\n';
         else cout << "NO" << '\n';
     }
     return 0;
