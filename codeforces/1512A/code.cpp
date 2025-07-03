@@ -13,16 +13,16 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vector<int> vec(n);
+        vector<int> v(n);
         map<int, int> mpp;
         for (int i = 0; i < n; i++) {
-            cin >> vec[i];
-            mpp[vec[i]]++;
+            cin >> v[i];
+            mpp[v[i]]++;
         }
         for (auto it : mpp) {
             if (it.second == 1) {
-                auto idx = find(vec.begin(), vec.end(), it.first);
-                cout << (idx - vec.begin() + 1) << '\n';
+                auto idx = find(v.begin(), v.end(), it.first);
+                cout << (idx - v.begin() + 1) << '\n';
             }
         }    
     }
