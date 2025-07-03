@@ -13,12 +13,12 @@ int main() {
     while (t--) {
         int n, m;
         cin >> n >> m;
-        vector<string> vec(n);
+        vector<string> v(n);
         for (int i = 0; i < n; i++)
-            cin >> vec[i];
+            cin >> v[i];
         int ans = 0, sum = 0;
         for (int i = 0; i < n; i++) {
-            sum += vec[i].size();
+            sum += v[i].size();
             ans++;
             if (sum > m) {
                 ans--;
