@@ -13,12 +13,12 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vector<int> vec(n);
+        vector<int> v(n);
         for (int i = 0; i < n; i++)
-            cin >> vec[i];
+            cin >> v[i];
         int ans = 1, nop = 1, day = 1, sum = 1;
         for (int i = 1; i < n; i++) {
-            sum += vec[i];
+            sum += v[i];
             while (nop < sum)
                 nop += 8 * day++;
             if (nop == sum)
