@@ -8,10 +8,10 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int arr[3];
-    cin >> arr[0] >> arr[1] >> arr[2];
-    sort(arr, arr + 3);
-    int ans = abs(arr[0] - arr[1]) + abs(arr[2] - arr[1]);
+    int a[3];
+    cin >> a[0] >> a[1] >> a[2];
+    sort(a, a + 3);
+    int ans = abs(a[0] - a[1]) + abs(a[2] - a[1]);
     cout << ans << '\n';
     return 0;
 }
