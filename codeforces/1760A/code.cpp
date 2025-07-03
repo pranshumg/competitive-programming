@@ -11,10 +11,10 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        vector<int> vec(3);
-        for (int i = 0; i < 3; i++) cin >> vec[i];
-        sort(vec.begin(), vec.end());
-        cout << vec[1] << '\n';
+        vector<int> v(3);
+        for (int i = 0; i < 3; i++) cin >> v[i];
+        sort(v.begin(), v.end());
+        cout << v[1] << '\n';
     }
     return 0;
 }
