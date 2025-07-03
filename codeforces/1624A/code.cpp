@@ -13,9 +13,9 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vector<int> vec(n);
-        for (int i = 0; i < n; i++) cin >> vec[i];
-        cout << *(max_element(vec.begin(), vec.end())) - *(min_element(vec.begin(), vec.end())) << '\n';
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
+        cout << *(max_element(v.begin(), v.end())) - *(min_element(v.begin(), v.end())) << '\n';
     } 
     return 0;
 }
