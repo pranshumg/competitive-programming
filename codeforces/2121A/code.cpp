@@ -13,10 +13,10 @@ int main() {
     while (t--) {
         int n, s;
         cin >> n >> s;
-        vector<int> a(n);
+        vector<int> v(n);
         for (int i = 0; i < n; i++) 
-            cin >> a[i];
-        int maxi = *(max_element(a.begin(), a.end())), mini = *(min_element(a.begin(), a.end()));
+            cin >> v[i];
+        int maxi = *(max_element(v.begin(), v.end())), mini = *(min_element(v.begin(), v.end()));
         if (s >= maxi)
             cout << s - mini  << '\n';
         else if (s <= mini)
