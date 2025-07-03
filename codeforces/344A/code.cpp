@@ -10,15 +10,15 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
+    vector<int> v(n);
     int ans = 1;
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int curr = vec[0];
+    for (int i = 0; i < n; i++) cin >> v[i];
+    int curr = v[0];
     for (int i = 1; i < n; i++) {
-        if (vec[i] == curr) continue;
+        if (v[i] == curr) continue;
         else {
             ans++;
-            curr = vec[i];
+            curr = v[i];
         }
     }
     cout << ans;
