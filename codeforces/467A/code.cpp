@@ -10,11 +10,11 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(2 * n);
-    for(int i = 0; i < 2 * n; i++) cin >> vec[i];
+    vector<int> v(2 * n);
+    for(int i = 0; i < 2 * n; i++) cin >> v[i];
     int ans = 0;
     for (int i = 0; i < 2 * n - 1; i += 2) {
-        if (vec[i + 1] - vec[i] >= 2) ans++;
+        if (v[i + 1] - v[i] >= 2) ans++;
     }
     cout << ans;
     return 0;
