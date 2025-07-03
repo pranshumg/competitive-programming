@@ -10,12 +10,12 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int num = vec[0] > 0 ? vec[0] : -(vec[0]);
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    int num = v[0] > 0 ? v[0] : -(v[0]);
     for (int i = 1; i < n; i++) {
-        if (vec[i] < num && vec[i] >= 0) num = vec[i];
-        else if (vec[i] < 0 && ((0 - vec[i]) < num)) num = -(vec[i]);
+        if (v[i] < num && v[i] >= 0) num = v[i];
+        else if (v[i] < 0 && ((0 - v[i]) < num)) num = -(v[i]);
     }
     cout << num;
     return 0;
