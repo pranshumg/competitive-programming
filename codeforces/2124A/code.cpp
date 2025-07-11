@@ -17,18 +17,18 @@ int main() {
         for (int i = 0; i < n; i++) {
             cin >> v[i];
         }
-        vector<int> res;
+        vector<int> ans;
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (v[i] > v[j]) {
-                    res = {v[i], v[j]};
+                    ans = {v[i], v[j]};
                 }
             }
         }
-        if (res.empty()) {
+        if (ans.empty()) {
             cout << "NO\n";
         } else {
-            cout << "YES\n" << 2 << '\n' << res[0] << " " << res[1] << '\n';
+            cout << "YES\n" << 2 << '\n' << ans[0] << " " << ans[1] << '\n';
         }
     }
     return 0;
