@@ -1,0 +1,10 @@
+YES
+OX|XO
+OX|XO
+XO|OX
+OX|OX
+XO|OX
+XX|++
+OX|OX
+OX|XO
+OX|OX
