@@ -11,7 +11,7 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int n, prod = 1;;
+        int n, prod = 1;
         cin >> n;
         vector<int> v(n);
         for (int i = 0; i < n; i++) {
