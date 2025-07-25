@@ -12,7 +12,7 @@ int main() {
     cin >> p >> n;
     int curr, ans = -1;
     vector<int> v;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         cin >> curr;
         if (find(v.begin(), v.end(), curr % p) == v.end()) {
             v.emplace_back(curr % p);
