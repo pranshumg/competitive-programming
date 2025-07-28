@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// TC - O(log n)
 void func(int n) {
     int rev_n = 0, og_n = n;
     while (n > 0) {
