@@ -2,7 +2,8 @@
 
 using namespace std;
 
-// Method 1
+// Method 1 
+// TC - O(log n)
 int func1(int n) {
     int cnt = 0;
     while (n > 0) {
@@ -12,6 +13,7 @@ int func1(int n) {
 }
 
 // Method 2
+// TC - O(1)
 int func2(int n) {
     return (int)(log10(n) + 1);
 }
