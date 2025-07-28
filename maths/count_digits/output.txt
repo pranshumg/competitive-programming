@@ -1,2 +1,2 @@
-Method 1: 10
-Method 2: 10
+10
+
