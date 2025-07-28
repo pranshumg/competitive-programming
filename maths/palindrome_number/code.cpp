@@ -1,15 +1,19 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 void func(int n) {
-    int og_n = n, rev_n = 0;
+    int rev_n = 0, og_n = n;
     while (n > 0) {
-        int ld = n % 10;
-        rev_n = rev_n * 10 + ld;
+        int d = n % 10;
+        rev_n = rev_n * 10 + d;
         n /= 10;
     }
-    if (og_n == rev_n) cout << "True" << endl;
-    else cout << "False" << endl;
+    if (og_n == rev_n) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
 }
 
 int main() {
