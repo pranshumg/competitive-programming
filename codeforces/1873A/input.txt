@@ -1,0 +1,6 @@
+5
+cab
+acb
+cba
+bac
+bca
