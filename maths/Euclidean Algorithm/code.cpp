@@ -1,19 +1,27 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-int func(int n1, int n2) {
-    while (n1 > 0 && n2 > 0) {
-        if (n1 > n2) n1 %= n2;
-        else n2 %= n1;
+/* Euclidean algorithm */
+// TC - O(log min(n, m))
+void func(int n, int m) {
+    while (n > 0 && m > 0) {
+        if (n > m) {
+            n %= m;
+        } else {
+            m %= n;
+        }
     }
-    if (n1 == 0) return n2;
-    return n1;
+    if (n == 0) {
+        cout << m << '\n';
+    } else {
+        cout << n << '\n';
+    }
 }
 
 int main() {
-    int n1, n2;
-    cin >> n1 >> n2;
-    int ans = func(n1, n2);
-    cout << ans << endl;
+    int n, m;
+    cin >> n >> m;
+    func(n, m);
     return 0;
 }
