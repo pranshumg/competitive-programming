@@ -3,6 +3,7 @@
 using namespace std;
 
 // TC - O(n)
+// SC - O(n)
 void func(string s, int n) {
     if (n == 0) {
         return;
