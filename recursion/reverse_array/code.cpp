@@ -1,18 +1,27 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void func(int i, int arr[], int n) {
-    if (i >= n / 2) return;
-    swap(arr[i], arr[n - i - 1]);
-    func(i + 1, arr, n);
+// TC - O(n)
+// SC - O(n)
+void func(vector<int>& v, int i, int n) {
+    if (i >= n / 2) {
+        return;
+    }
+    swap(v[i], v[n - i - 1]);
+    func(v, i + 1, n);
 }
 
 int main() {
-    int n; 
+    int n;
     cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
-    func(0, arr, n);
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+    func(v, 0, n);
+    for (auto it: v) {
+        cout << it << ' ';
+    }
     return 0;
 }
