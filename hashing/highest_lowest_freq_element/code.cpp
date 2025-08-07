@@ -1,74 +1,51 @@
-// Optimized approach (Using map):
-
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void func(int arr[], int n) {
-    unordered_map<int, int> mpp;
-    for (int i = 0; i < n; i++) mpp[arr[i]]++;
-
-    int max_ele = arr[0], max_freq = mpp[arr[0]];
-    int min_ele = arr[0], min_freq = mpp[arr[0]];
-    for (auto it : mpp) {
-        int element = it.first;
-        int count = it.second;
-
-        if (count < min_freq) {
-            min_freq = count;
-            min_ele = element;
-        }
-        if (count > max_freq) {
-            max_freq = count;
-            max_ele = element;
-        }
-    }
-    cout << max_ele << " " << min_ele << endl;
-}
-
-int main() {
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
-    func(arr, n);
-    return 0;
-}
-
-// Brute-Force approach: 
-
-/*
-#include <bits/stdc++.h>
-using namespace std;
-
-void func(int arr[], int n) {
-    int hash[100000] = {0};
-    for (int i = 0; i < n; i++) hash[arr[i]]++;
-
-    int max_ele = arr[0], max_freq = hash[arr[0]];
-    int min_ele = arr[0], min_freq = hash[arr[0]];
+// using vector
+void func1(vector<int>& v, int n) {
+    vector<int> hash(1000000, 0);
     for (int i = 0; i < n; i++) {
-        int element = arr[i];
-        int count = hash[arr[i]];
+        hash[v[i]]++;
+    } 
+    int max_el = v[0], max_freq = hash[v[0]], min_el = v[0], min_freq = hash[v[0]];
 
-        if (count < min_freq) {
-            min_freq = count;
-            min_ele = element;
+    for (auto it: v) {
+        if (hash[it] > max_freq) {
+            max_el = it, max_freq = hash[it];
         }
-        if (count > max_freq) {
-            max_freq = count;
-            max_ele = element;
+        if (hash[it] < min_freq) {
+            min_el = it, min_freq = hash[it];
         }
     }
-    cout << max_ele << " " << min_ele << endl;
+    cout << max_el << ' ' << min_el << '\n';
+}
+
+// using map
+void func2(vector<int>& v, int n) {
+    unordered_map<int, int> mp;
+    for (int i = 0; i < n; i++) {
+        mp[v[i]]++;
+    }
+    int max_el = v[0], max_freq = mp[v[0]], min_el = v[0], min_freq = mp[v[0]];
+    for (auto it: mp) {
+        if (it.second > max_freq) {
+            max_el = it.first, max_freq = it.second;
+        }
+        if (it.second < min_freq) {
+            min_el = it.first, min_freq = it.second;
+        }
+    }
+    cout << max_el << ' ' << min_el << '\n';
 }
 
 int main() {
     int n;
     cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
-    func(arr, n);
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }    
+    func2(v, n);
     return 0;
 }
-*/
-
