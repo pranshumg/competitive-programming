@@ -9,7 +9,6 @@ void func1(vector<int>& v, int n) {
         hash[v[i]]++;
     } 
     int max_el = v[0], max_freq = hash[v[0]], min_el = v[0], min_freq = hash[v[0]];
-
     for (auto it: v) {
         if (hash[it] > max_freq) {
             max_el = it, max_freq = hash[it];
