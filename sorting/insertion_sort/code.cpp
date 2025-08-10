@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void insertion_sort(vector<int> &vec, int n) {
-    for (int i = 0; i < n; i++) {
+// Best TC - O(n)
+// Worst TC - O(n²)
+void insertion_sort(vector<int>& v, int n) {
+    for (int i = 1; i < n; i++) {
         int j = i;
-        while (j > 0 && vec[j - 1] > vec[j]) {
-            swap(vec[j - 1], vec[j]);
-            j--;
+        while (j > 0 && v[j - 1] > v[j]) {
+            swap(v[j - 1], v[j--]);
         }
     }
 }
@@ -14,9 +16,14 @@ void insertion_sort(vector<int> &vec, int n) {
 int main() {
     int n;
     cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    insertion_sort(vec, n);
-    for (auto it : vec) cout << it << " ";
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }    
+    insertion_sort(v, n);
+    for (auto it: v) {
+        cout << it << ' ';
+    }
+    cout << '\n';
     return 0;
 }
