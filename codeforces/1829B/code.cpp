@@ -1,10 +1,10 @@
 /**
  *   author: pranshumg
 **/
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 
 using namespace std;
- 
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -13,17 +13,17 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++) cin >> v[i];
-        int ans = 0, count = 0;
+        int cnt = 0, ans = 0, curr;
         for (int i = 0; i < n; i++) {
-            if (v[i] == 0) {
-                count++;
-                if (count > ans) ans = count;
+            cin >> curr;
+            if (curr == 0) {
+                cnt++;
+            } else {
+                cnt = 0;
             }
-            else count = 0;
+            ans = max(ans, cnt);
         }
-        cout << ans << '\n';  
+        cout << ans << '\n';
     }
     return 0;
 }
