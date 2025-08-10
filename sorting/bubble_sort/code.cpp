@@ -2,9 +2,8 @@
 
 using namespace std;
 
-// TC :
-// Best - O(n)
-// Worst - O(n²)
+// Best TC - O(n)
+// Worst TC - O(n²)
 void bubble_sort(vector<int>& v, int n) {
     for (int i = 0; i < n; i++) {
         int did_swap = 0;
