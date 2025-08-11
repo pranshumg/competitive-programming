@@ -20,30 +20,39 @@ int gcd(int a, int b) {
     }
 }
 
+void run_case() {
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+    int GCD = INT_MAX;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            GCD = min(GCD, gcd(v[i], v[j]));
+            if (GCD <= 2) {
+                break;
+            }
+        }
+        if (GCD <= 2) {
+            break;
+        }
+    }
+    if (GCD <= 2) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++) {
-            cin >> v[i];
-        }
-        int GCD = INT_MAX;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                int d = gcd(v[i], v[j]);
-                GCD = min(GCD, d);                
-            }
-        }
-        if (GCD > 2) {
-            cout << "NO\n";
-        } else {
-            cout << "YES\n";
-        }
+    int tests;
+    cin >> tests;
+    while (tests--) {
+        run_case();
     }
     return 0;
 }
