@@ -21,8 +21,7 @@ int remove_duplicates_2(vector<int>& v, int n) {
     int i = 0, j = 1;
     while (j < n) {
         if (v[i] != v[j]) {
-            v[i + 1] = v[j];
-            i++;
+            v[i++ + 1] = v[j];
         }
         j++;
     }
