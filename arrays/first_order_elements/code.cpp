@@ -1,30 +1,39 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-int largest_element(vector<int> &vec, int n) {
-    int largest = vec[0];
-    for (int i = 0; i < n; i++) if (vec[i] > largest) largest = vec[i];
+/* Largest element */
+// Brute (TC - O(n log n), SC - O(1))
+int largest_element_1(vector<int>& v, int n) {
+    sort(v.begin(), v.end());
+    return v[n - 1];
+}
+
+// Optimal (TC - O(n), SC - O(1))
+int largest_element_2(vector<int>& v, int n) {
+    int largest = v[0];
+    for (int i = 1; i < n; i++) {
+        if (largest < v[i]) {
+            largest = v[i];
+        }
+    }
     return largest;
 }
 
-int smallest_element(vector<int> &vec, int n) {
-    int smallest = vec[0];
-    for (int i = 0; i < n; i++) if (vec[i] < smallest) smallest = vec[i];
+/* Smallest element */
+// Brute (TC - O(n log n), SC - O(1))
+int smallest_element_1(vector<int>& v, int n) {
+    sort(v.begin(), v.end());
+    return v[0];
+}
+
+// Optimal (TC - O(n), SC - O(1))
+int smallest_element_2(vector<int>& v, int n) {
+    int smallest = v[0];
+    for (int i = 1; i < n; i++) {
+        if (smallest > v[i]) {
+            smallest = v[i];
+        }
+    }
     return smallest;
-}
-
-vector<int> get_first_order_elements(vector<int> &vec, int n) {
-    int largest = largest_element(vec, n);
-    int smallest = smallest_element(vec, n);
-    return {largest, smallest};
-}
-
-int main() {
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    vector<int> ans = get_first_order_elements(vec, n);
-    for(auto it : ans) cout << it << " ";
-    return 0;
 }
