@@ -1,24 +1,30 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-int remove_duplicates(vector<int> &vec, int n) {
-    int i = 0; 
-    for (int j = 1; j < n; j++) {
-        if (vec[j] != vec[i]) {
-            vec[i + 1] = vec[j];
-            i++;
-        }
+/* Remove Duplicates from sorted array */
+// Brute (TC - O(n log n), SC - O(n))
+int remove_duplicates_1(vector<int>& v, int n) {
+    set<int> st;
+    for (int i = 0; i < n; i++) {
+        st.insert(v[i]);
     }
-    return i + 1;
+    int idx = 0;
+    for (auto it: st) {
+        v[idx++] = it;
+    }
+    return st.size();
 }
 
-int main() {
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int ans = remove_duplicates(vec, n);
-    cout << ans << endl;
-    for (int i = 0; i < ans; i++) cout << vec[i] << " ";
-    return 0;
+// Optimal (TC - O(n), SC - O(1))
+int remove_duplicates_2(vector<int>& v, int n) {
+    int i = 0, j = 1;
+    while (j < n) {
+        if (v[i] != v[j]) {
+            v[i + 1] = v[j];
+            i++;
+        }
+        j++;
+    }
+    return i + 1;
 }
