@@ -1,18 +1,22 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void rotate_by_one_place(vector<int> &vec, int n) {
-    int temp = vec[0];
-    for (int i = 1; i < n; i++) vec[i - 1] = vec[i];
-    vec[n - 1] = temp;
+/* Rotate array by one place */
+// TC - O(n), SC - O(1)
+void rotate_left_by_one_place(vector<int>& v, int n) {
+    int temp = v[0];
+    for (int i = 1; i < n; i++) {
+        v[i - 1] = v[i];
+    }
+    v[n - 1] = temp;
 }
 
-int main() {
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    rotate_by_one_place(vec, n);
-    for (auto it : vec) cout << it << " ";
-    return 0;
+// TC - O(n), SC - O(1)
+void rotate_right_by_one_place(vector<int>& v, int n) {
+    int temp = v[n - 1];
+    for (int i = n - 1; i > 0; i--) {
+        v[i] = v[i - 1];
+    }
+    v[0] = temp;
 }
