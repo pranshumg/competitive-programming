@@ -1,49 +1,44 @@
-// Optimal:
-
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void rotate_by_k_places(vector<int> &vec, int n, int k) {
-    reverse(vec.begin(), vec.begin() + k);
-    reverse(vec.begin() + k, vec.end());
-    reverse(vec.begin(), vec.end());
-}
-
-int main() {
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int k;
-    cin >> k;
-    rotate_by_k_places(vec, n, k);
-    for (auto it : vec) cout << it << " ";
-    return 0;
-}
-
-// Brute Force:
-
-/* 
-#include <bits/stdc++.h>
-using namespace std;
-
-void rotate_by_k_places(vector<int> &vec, int n, int k) {
+/* Rotate array by k places */
+// Brute (TC - O(n), SC - O(k))
+void rotate_left_by_k_places(vector<int>& v, int n, int k) {
     k %= n;
-    vector<int> temp;
-    for (int i = 0; i < k; i++) temp.emplace_back(vec[i]); 
-    for (int i = k; i < n; i++) vec[i - k] = vec[i];
-    for (int i = n - k; i < n; i++) vec[i] = temp[i - (n - k)];
+    vector<int> temp(v.begin(), v.begin() + k);
+    for (int i = k; i < n; i++) {
+        v[i - k] = v[i];
+    }
+    for (int i = n - k; i < n; i++) {
+        v[i] = temp[i - (n - k)];
+    }
 }
 
-int main() {
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int k;
-    cin >> k;
-    rotate_by_k_places(vec, n, k);
-    for (auto it : vec) cout << it << " ";
-    return 0;
-} 
-*/
+// Optimal (TC - O(n), SC - O(1))
+void rotate_left_by_k_places(vector<int>& v, int n, int k) {
+    k %= n;
+    reverse(v.begin(), v.begin() + k);
+    reverse(v.begin() + k, v.end());
+    reverse(v.begin(), v.end());
+}
+
+// Brute (TC - O(n), SC - O(k))
+void rotate_right_by_k_places(vector<int>& v, int n, int k) {
+    k %= n;
+    vector<int> temp(v.begin() + (n - k), v.end());
+    for (int i = n - 1; i >= k; i--) {
+        v[i] = v[i - k];
+    }
+    for (int i = 0; i < k; i++) {
+        v[i] = temp[i];
+    }
+}
+
+// Optimal (TC - O(n), SC - O(1))
+void rotate_right_by_k_places(vector<int>& v, int n, int k) {
+    k %= n;
+    reverse(v.begin(), v.begin() + (n - k));
+    reverse(v.begin() + (n - k), v.end());
+    reverse(v.begin(), v.end());
+}
