@@ -1,92 +1,56 @@
-// Brute Force:
-
-/*
 #include <bits/stdc++.h>
+
 using namespace std;
 
-int longest_subarray_with_sum_k(vector<int> &vec, int n, int k) {
+/* Longest subarray with sum k */
+// Brute (TC - O(n²), SC - O(1))
+int longest_subarray(vector<int>& v, int n, int k) {
     int len = 0;
     for (int i = 0; i < n; i++) {
         int sum = 0;
         for (int j = i; j < n; j++) {
-            sum += vec[j];
-            if (sum == k) len = max(len, j - i + 1);
+            sum += v[j];
+            if (sum == k) {
+                len = max(len, j - i + 1);
+            }
         }
     }
     return len;
 }
 
-int main() { 
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int k;
-    cin >> k;
-    cout << longest_subarray_with_sum_k(vec, n, k);
-    return 0;
-}
-*/
-
-// Hashing:
-
-/*
-#include <bits/stdc++.h>
-using namespace std;
-
-int longest_subarray_with_sum_k(vector<int> &vec, int n, int k) {
-    map<long long, int> pre_sum_map;
-    int max_len = 0;
-    long long sum = 0;
+// Better (TC - O(n), SC - O(n))
+int longest_subarray(vector<int>& v, int n, int k) {
+    unordered_map<int, int> pre_sum;
+    int len = 0, sum = 0;
     for (int i = 0; i < n; i++) {
-        sum += vec[i];
-        if (sum == k) max_len = max(max_len, i + 1);
-        long long rem = sum - k;
-        if (pre_sum_map.find(rem) != pre_sum_map.end()) {
-            int len = i - pre_sum_map[rem];
-            max_len = max(max_len, len);
+        sum += v[i];
+        if (sum == k) {
+            len = max(len, i + 1);
         }
-        if (pre_sum_map.find(sum) == pre_sum_map.end()) pre_sum_map[sum] = i;
-    }
-    return max_len;
-}
-
-int main() { 
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int k;
-    cin >> k;
-    cout << longest_subarray_with_sum_k(vec, n, k);
-    return 0;
-}
-*/
-
-// Optimal:
-
-#include <bits/stdc++.h>
-using namespace std;
-
-int longest_subarray_with_sum_k(vector<int> &vec, int n, int k) {
-    int left = 0, right = 0;
-    long long sum = vec[0];
-    int len = 0;
-    while (right < n) {
-        while (left <= right && sum > k) sum -= vec[left++];
-        if (sum == k) len = max(len, right - left + 1);
-        if (right < n) sum += vec[++right]; 
+        if (pre_sum.find(sum - k) != pre_sum.end()) {
+            len = max(len, i - pre_sum[sum - k]);
+        }
+        if (pre_sum.find(sum) == pre_sum.end()) {
+            pre_sum[sum] = i;
+        }
     }
     return len;
 }
 
-int main() { 
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    int k;
-    cin >> k;
-    cout << longest_subarray_with_sum_k(vec, n, k);
-    return 0;
+// Optimal (TC - O(n), SC - O(1))
+int longest_subarray(vector<int>& v, int n, int k) {
+    int left = 0, right = 0, len = 0, sum = v[0];
+    while (right < n) {
+        while (left <= right && sum > k) {
+            sum -= v[left++];
+        }
+        if (sum == k) {
+            len = max(len, right - left + 1);
+        }
+        right++;
+        if (right < n) {
+            sum += v[right];
+        }
+    }
+    return len;
 }
