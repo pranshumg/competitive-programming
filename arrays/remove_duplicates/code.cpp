@@ -4,7 +4,7 @@ using namespace std;
 
 /* Remove Duplicates from sorted array */
 // Brute (TC - O(n log n), SC - O(n))
-int remove_duplicates_1(vector<int>& v, int n) {
+int remove_duplicates(vector<int>& v, int n) {
     set<int> st;
     for (int i = 0; i < n; i++) {
         st.insert(v[i]);
@@ -17,7 +17,7 @@ int remove_duplicates_1(vector<int>& v, int n) {
 }
 
 // Optimal (TC - O(n), SC - O(1))
-int remove_duplicates_2(vector<int>& v, int n) {
+int remove_duplicates(vector<int>& v, int n) {
     int i = 0, j = 1;
     while (j < n) {
         if (v[i] != v[j]) {
