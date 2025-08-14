@@ -1,22 +1,18 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-int max_consecutive_ones(vector<int> &vec, int n) {
-    int max1 = 0, count = 0;
+/* Maximum consecutive ones */
+// TC - O(n), SC - O(1)
+int max_consecutive_ones(vector<int>& v, int n) {
+    int ans = 0, cnt = 0;
     for (int i = 0; i < n; i++) {
-        if (vec[i] == 1) {
-            count++;
-            max1 = max(max1, count);
-        } else count = 0;
+        if (v[i] == 1) {
+            cnt++;
+        } else {
+            cnt = 0;
+        }
+        ans = max(ans, cnt);
     }
-    return max1;
-}
-
-int main() { 
-    int n;
-    cin >> n;
-    vector<int> vec(n);
-    for (int i = 0; i < n; i++) cin >> vec[i];
-    cout << max_consecutive_ones(vec, n);
-    return 0;
+    return ans;
 }
