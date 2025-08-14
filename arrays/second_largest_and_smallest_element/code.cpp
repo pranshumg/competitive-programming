@@ -4,7 +4,7 @@ using namespace std;
 
 /* Second Largest element */
 // Brute (TC - O(n log n), SC - O(1))
-int second_largest_element_1(vector<int>& v, int n) {
+int second_largest_element(vector<int>& v, int n) {
     sort(v.begin(), v.end());
     int largest = v[n - 1];
     for (int i = n - 2; i >= 0; i--) {
@@ -16,7 +16,7 @@ int second_largest_element_1(vector<int>& v, int n) {
 }
 
 // Better (TC - O(n), SC - O(1))
-int second_largest_element_2(vector<int>& v, int n) {
+int second_largest_element(vector<int>& v, int n) {
     int largest = v[0], second_largest = INT_MIN;
     for (int i = 1; i < n; i++) {
         if (v[i] > largest) {
@@ -32,7 +32,7 @@ int second_largest_element_2(vector<int>& v, int n) {
 }
 
 // Optimal (TC - O(n), SC - O(1))
-int second_largest_element_3(vector<int>& v, int n) {
+int second_largest_element(vector<int>& v, int n) {
     int largest = v[0], second_largest = INT_MIN;
     for (int i = 1; i < n; i++) {
         if (v[i] > largest) {
@@ -46,7 +46,7 @@ int second_largest_element_3(vector<int>& v, int n) {
 
 /* Second Smallest element */
 // Brute (TC - O(n log n), SC - O(1))
-int second_smallest_element_1(vector<int>& v, int n) {
+int second_smallest_element(vector<int>& v, int n) {
     sort(v.begin(), v.end());
     int smallest = v[0];
     for (int i = 1; i < n; i++) {
@@ -58,7 +58,7 @@ int second_smallest_element_1(vector<int>& v, int n) {
 }
 
 // Better (TC - O(n), SC - O(1))
-int second_smallest_element_2(vector<int>& v, int n) {
+int second_smallest_element(vector<int>& v, int n) {
     int smallest = v[0], second_smallest = INT_MAX;
     for (int i = 1; i < n; i++) {
         if (v[i] < smallest) {
@@ -74,7 +74,7 @@ int second_smallest_element_2(vector<int>& v, int n) {
 }
 
 // Optimal (TC - O(n), SC - O(1))
-int second_smallest_element_3(vector<int>& v, int n) {
+int second_smallest_element(vector<int>& v, int n) {
     int smallest = v[0], second_smallest = INT_MAX;
     for (int i = 1; i < n; i++) {
         if (v[i] < smallest) {
