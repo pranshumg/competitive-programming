@@ -28,6 +28,9 @@ void move_zeros_to_end(vector<int>& v, int n) {
             break;
         }
     }
+    if (j == -1) {
+        return;
+    }
     for (int i = j + 1; i < n; i++) {
         if (v[i] != 0) {
             swap(v[i], v[j++]);
