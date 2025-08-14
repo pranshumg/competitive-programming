@@ -1,75 +1,53 @@
-// Brute Force:
-
-/*
 #include <bits/stdc++.h>
+
 using namespace std;
 
-int missing_number(vector<int> &vec, int n) {
-    for (int i = 0; i < n; i++) {
-        int flag = 0;
-        for (int j = 0; j < n - 1; j++) {
-            if (vec[j] == i) {
-                flag = 1;
+/* Missing Number */
+// Brute (TC - O(n²), SC - O(1))
+int missing_number(vector<int>& v, int n) {
+    for (int i = 1; i <= n + 1; i++) {
+        bool flag = false;
+        for (int j = 0; j < n; j++) {
+            if (i == v[j]) {
+                flag = true;
                 break;
             }
         }
-        if (flag == 0) return i;
+        if (!flag) {
+            return i;
+        }
     }
-    return -1;
+} 
+
+// Better (TC - O(n), SC - O(n))
+int missing_number(vector<int>& v, int n) {
+    vector<int> hash(n + 1, 0);
+    for (int i = 0; i < n; i++) {
+        hash[v[i]]++;
+    }
+    for (int i = 1; i <= n + 1; i++) {
+        if (hash[i] == 0) {
+            return i;
+        }
+    }
 }
 
-int main() { 
-    int n;
-    cin >> n;
-    vector<int> vec(n - 1);
-    for (int i = 0; i < n - 1; i++) cin >> vec[i];
-    cout << missing_number(vec, n);
-    return 0;
-}
-*/
-
-// Hashing:
-
-/*
-#include <bits/stdc++.h>
-using namespace std;
-
-int missing_number(vector<int> &vec, int n) {
-    vector<int> hash(n, 0);
-    for (int i = 0; i < n - 1; i++) hash[vec[i]]++;
-    for (int i = 0; i < n; i++) if (hash[i] == 0) return i;
-    return -1;
+// Optimal (TC - O(n), SC - O(1))
+int missing_number(vector<int>& v, int n) {
+    int sum1 = ((n + 1)* (n + 2)) / 2, sum2 = 0;
+    for (int i = 0; i < n; i++) {
+        sum2 += v[i];
+    }
+    return sum1 - sum2;
 }
 
-int main() { 
-    int n;
-    cin >> n;
-    vector<int> vec(n - 1);
-    for (int i = 0; i < n - 1; i++) cin >> vec[i];
-    cout << missing_number(vec, n);
-    return 0;
-}
-*/
-
-// Optimal:
-
-#include <bits/stdc++.h>
-using namespace std;
-
-int missing_number(vector<int> &vec, int n) {
+// Optimal (TC - O(n), SC - O(1))
+int missing_number(vector<int>& v, int n) {
     int xor1 = 0, xor2 = 0;
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n; i++) {
         xor1 ^= (i + 1);
-        xor2 ^= vec[i];
+        xor2 ^= v[i];
     }
+    xor1 ^= (n + 1);
     return xor1 ^ xor2;
-}
-
-int main() { 
-    int n;
-    cin >> n;
-    vector<int> vec(n - 1);
-    for (int i = 0; i < n - 1; i++) cin >> vec[i];
-    cout << missing_number(vec, n);
-    return 0;
 }
