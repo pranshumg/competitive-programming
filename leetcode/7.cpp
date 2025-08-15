@@ -1,30 +1,17 @@
-#include <iostream>
-#include <climits>
-using namespace std;
+#include <bits/stdc++.h>
 
 class Solution {
 public:
-    int reverse(int x) {
-        long long rev_x = 0;
+    int64_t reverse(int x) {
+        int64_t rev = 0;
         while (x != 0) {
-            int rem = x % 10;
-            rev_x = rev_x * 10 + rem;
+            int d = x % 10;
+            rev = rev * 10 + d;
             x /= 10;
         }
-        if (rev_x > INT_MAX || rev_x < INT_MIN) {
+        if (rev > INT_MAX || rev < INT_MIN) {
             return 0;
-        }    
-        return static_cast<int>(rev_x);
+        } 
+        return rev;
     }
 };
-
-int main() {
-    int x;
-    cout << "x: ";
-    cin >> x;
-
-    Solution a;
-    cout << "reverse: " << a.reverse(x) << endl;
-
-    return 0;
-}
