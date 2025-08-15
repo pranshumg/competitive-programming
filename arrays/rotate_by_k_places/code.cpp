@@ -26,12 +26,12 @@ void rotate_left_by_k_places(vector<int>& v, int n, int k) {
 // Brute (TC - O(n), SC - O(k))
 void rotate_right_by_k_places(vector<int>& v, int n, int k) {
     k %= n;
-    vector<int> temp(v.begin() + (n - k), v.end());
-    for (int i = n - 1; i >= k; i--) {
-        v[i] = v[i - k];
+    vector<int> temp(v.begin(), v.begin() + (n - k));
+    for (int i = n - k; i < n; i++) {
+        v[i - (n - k)] = v[i];
     }
-    for (int i = 0; i < k; i++) {
-        v[i] = temp[i];
+    for (int i = k; i < n; i++) {
+        v[i] = temp[i - k];
     }
 }
 
