@@ -1,46 +1,30 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 class Solution {
 public:
-    bool is_alphanumeric(char ch) {
-        if ((ch >= '0' && ch <= '9') || (tolower(ch) >= 'a' && tolower(ch) <= 'z')) {
+    bool is_alphanumeric(char c) {
+        if ((c >= '0' && c <= '9') || (tolower(c) >= 'a' && tolower(c) <= 'z')) {
             return true;
         }
         return false;
     }
-        
+
     bool isPalindrome(string s) {
-        int start = 0, end = s.length() - 1;
-        while (start < end) {
-            if (!is_alphanumeric(s[start])) {
-                start++;
-                continue;
+        int left = 0, right = (int)s.size() - 1;
+        while (left < right) {
+            while (left < right && !is_alphanumeric(s[left])) {
+                left++;
             }
-            if (!is_alphanumeric(s[end])) {
-                end--;
-                continue;
+            while (left < right && !is_alphanumeric(s[right])) {
+                right--;
             }
-    
-            if (tolower(s[start]) != tolower(s[end])) {
+            if (tolower(s[left]) != tolower(s[right])) {
                 return false;
-            } else {
-                start++;
-                end--;
-            }
+            } 
+            left++, right--;
         }
-        return true;    
+        return true;
     }
 };
-
-int main() {
-    string s = "leetcode";
-
-    cout << "s: " << s << endl;
-
-    Solution a;
-    cout << boolalpha << a.isPalindrome(s) << endl;
-    
-    return 0;
-}
