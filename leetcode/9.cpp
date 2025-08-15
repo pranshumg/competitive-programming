@@ -1,31 +1,18 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 class Solution {
 public:
     bool isPalindrome(int x) {
         string s = to_string(x);
-        string a = s;
-        int start = 0, end = s.length() - 1;
-        while (start < end) {
-            swap(s[start++], s[end--]);
+        int left = 0, right = (int)s.size() - 1;
+        while (left < right) {
+            if (s[left] != s[right]) {
+                return false;
+            }
+            left++, right--;
         }
-        if (a == s) {
-            return true;
-        } else {
-            return false;
-        }     
+        return true;
     }
 };
-
-int main() {
-    int x;
-    cout << "x: ";
-    cin >> x;
-
-    Solution a;
-    cout << boolalpha << a.isPalindrome(x) << endl;
-    
-    return 0;
-}
