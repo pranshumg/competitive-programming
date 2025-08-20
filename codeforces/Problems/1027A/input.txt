@@ -1,0 +1,11 @@
+5
+6
+aaaaaa
+2
+ff
+4
+abab
+8
+ababbaba
+2
+az
