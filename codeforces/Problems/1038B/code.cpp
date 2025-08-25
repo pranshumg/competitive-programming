@@ -18,10 +18,10 @@ void run_case() {
     }
     if (flag) {
         cout << "Yes\n" << 1 << ' ' << i << '\n' << n - 1 << ' ';
-        for (int j = 1; j < i; j++) {
-            cout << j << ' ';
-        }
-        for (int j = i + 1; j <= n; j++) {
+        for (int j = 1; j <= n; j++) {
+            if (j == i) {
+                continue;
+            }
             cout << j << ' ';
         }
         return;
