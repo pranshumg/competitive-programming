@@ -13,21 +13,6 @@ string mul(string s, int n) {
     return res;
 }
 
-int gcd(int a, int b) {
-    while (a > 0 && b > 0) {
-        if (a > b) {
-            a %= b;
-        } else {
-            b %= a;
-        }
-    }
-    return (a == 0 ? b : a);
-}
-
-int lcm(int a, int b) {
-    return (a * b) / gcd(a, b);
-}
-
 void run_case() {
     string s, t;
     cin >> s >> t;
