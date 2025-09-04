@@ -1,25 +1,23 @@
 /**
  *   author: pranshumg
 **/
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 
 using namespace std;
- 
+
+void run_case() {
+    string s[3];
+    cin >> s[0] >> s[1] >> s[2];
+    cout << s[0][0] << s[1][0] << s[2][0] << '\n';
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
-    cin >> t;
-    cin.ignore();
-    while (t--) {
-        string s;
-        getline(cin, s);
-        cout << s[0];
-        for (int i = 1; i < s.size(); i++) {
-            if (s[i] == ' ')
-                cout << s[i + 1];
-        } 
-        cout << '\n';
+    int tests;
+    cin >> tests;
+    while (tests--) {
+        run_case();
     }
     return 0;
 }
