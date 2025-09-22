@@ -15,14 +15,10 @@ void run_case() {
     int left = 0, right = 0, sum = 0, ans = 0;
     while (right < n) {
         sum += v[right];
-        if (left == 0 && sum <= t) {
-            ans = right + 1;
-        } 
         if (sum > t) {
             sum -= v[left++];
         }
-        ans = max(ans, right - left + 1);
-        right++;
+        ans = max(ans, right++ - left + 1);
     }
     cout << ans << '\n';
 }
