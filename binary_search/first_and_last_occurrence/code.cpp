@@ -3,7 +3,7 @@
 using namespace std;
 
 /* First and last occurrence */
-// using upper ans lower bound (TC - O(log n), SC - O(1))
+// using upper and lower bound (TC - O(log n), SC - O(1))
 int lower_bound(vector<int>& v, int n, int target) {
         int low = 0, high = n - 1, ans = n;
         while (low <= high) {
