@@ -8,6 +8,13 @@ int no_of_times(vector<int>& v, int n) {
     int low = 0, high = n - 1, el = INT_MAX, idx = 0;
     while (low <= high) {
         int mid = (low + high) / 2;
+        if (v[low] == v[mid] && v[mid] == v[high]) {
+            if (v[low] < el) {
+                el = v[low], idx = low;
+            }
+            low++, high--;
+            continue;
+        }
         if (v[low] <= v[high]) {
             if (v[low] < el) {
                 el = v[low], idx = low;
