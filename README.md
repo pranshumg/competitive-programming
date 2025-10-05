@@ -1,3 +1,3 @@
 # competitive-programming
 
-Algorithms and solutions for programmming contests
+Library code for programming contests
