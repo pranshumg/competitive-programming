@@ -3,6 +3,7 @@
 using namespace std;
 
 /* Minimum days to make M bouquets */
+// TC - O(n * log (max(v) - min(v) + 1)), SC - O(1)
 bool possible(vector<int>& v, int m, int k, int day) {
     int bouquets = 0, cnt = 0;
     for (auto it: v) {
