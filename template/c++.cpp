@@ -9,16 +9,16 @@ using namespace std;
 #define sz(x) (int)(x).size()
 
 void run_case() {
-    ${0}
+  ${0}
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int tests;
-    cin >> tests;
-    while (tests--) {
-        run_case();
-    }
-    return 0;
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+  int tests;
+  cin >> tests;
+  while (tests--) {
+    run_case();
+  }
+  return 0;
 }
