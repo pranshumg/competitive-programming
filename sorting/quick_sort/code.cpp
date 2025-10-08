@@ -30,17 +30,3 @@ void quick_sort(vector<int>& v, int low, int high) {
   quick_sort(v, pivot_idx + 1, high);
 }
 
-int main() {
-  int n;
-  cin >> n;
-  vector<int> v(n);
-  for (int i = 0; i < n; i++) {
-    cin >> v[i];
-  }
-  quick_sort(v, 0, n - 1);
-  for (auto it: v) {
-    cout << it << ' ';
-  }
-  cout << '\n';
-  return 0;
-}

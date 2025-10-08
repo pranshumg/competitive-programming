@@ -35,17 +35,3 @@ void merge_sort(vector<int>& v, int low, int high) {
   merge(v, low, mid, high);
 } 
 
-int main() {
-  int n;
-  cin >> n;
-  vector<int> v(n);
-  for (int i = 0; i < n; i++) {
-    cin >> v[i];
-  }
-  merge_sort(v, 0, n - 1);
-  for (auto it: v) {
-    cout << it << ' ';
-  }
-  cout << '\n';
-  return 0;
-}

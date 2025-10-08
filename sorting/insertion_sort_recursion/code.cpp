@@ -15,17 +15,3 @@ void insertion_sort_rec(vector<int>& v, int i, int n) {
   insertion_sort_rec(v, i + 1, n);
 }
 
-int main() {
-  int n;
-  cin >> n;
-  vector<int> v(n);
-  for (int i = 0; i < n; i++) {
-    cin >> v[i];
-  }    
-  insertion_sort_rec(v, 1, n);
-  for (auto it: v) {
-    cout << it << ' ';
-  }
-  cout << '\n';
-  return 0;
-}
