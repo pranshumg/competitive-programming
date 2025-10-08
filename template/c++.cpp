@@ -9,7 +9,7 @@ using namespace std;
 #define sz(x) (int)(x).size()
 
 void run_case() {
-  
+  ${0}
 }
 
 int main() {
