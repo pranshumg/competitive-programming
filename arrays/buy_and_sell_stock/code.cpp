@@ -7,8 +7,8 @@ using namespace std;
 int max_profit(vector<int>& v, int n) {
   int mini = v[0], profit = 0;
   for (int i = 0; i < n; i++) {
-      profit = max(profit, v[i] - mini);
-      mini = min(mini, v[i]);
+    profit = max(profit, v[i] - mini);
+    mini = min(mini, v[i]);
   }
   return profit;
 }
