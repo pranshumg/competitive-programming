@@ -1,25 +1,29 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 void print17(int n) {
-    for (int i = 0; i < n; i++) {
-        char ch1 = 'A';
-        for (int j = 0; j < n - i - 1; j++) {
-            cout << " ";
-        }
-        for (int j = 0; j <= i; j++) {
-            cout << ch1++;
-        }
-        for (char ch2 = ch1 - 2; ch2 >= 'A';) {
-            cout << ch2--;
-        }
-        cout << endl;
+  for (int i = 0; i < n; i++) {
+    char c1 = 'A';
+    // Print leading spaces
+    for (int j = 0; j < n - i - 1; j++) {
+      cout << " ";
     }
+    // Print ascending letters
+    for (int j = 0; j <= i; j++) {
+      cout << c1++;
+    }
+    // Print descending letters
+    for (char c2 = c1 - 2; c2 >= 'A'; c2--) {
+      cout << c2;
+    }
+    cout << '\n';
+  }
 }
 
 int main() {
-    int n;
-    cin >> n;
-    print17(n);
-    return 0;
+  int n;
+  cin >> n;
+  print17(n);
+  return 0;
 }
