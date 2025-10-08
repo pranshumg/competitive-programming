@@ -12,16 +12,3 @@ void reverse(vector<int>& v, int i, int n) {
   reverse(v, i + 1, n);
 }
 
-int main() {
-  int n;
-  cin >> n;
-  vector<int> v(n);
-  for (int i = 0; i < n; i++) {
-    cin >> v[i];
-  }
-  reverse(v, 0, n);
-  for (auto it: v) {
-    cout << it << ' ';
-  }
-  return 0;
-}

@@ -12,9 +12,3 @@ void print_1_to_n(int n) {
   cout << n << ' ';
 }
 
-int main() {
-  int n;
-  cin >> n;
-  print_1_to_n(n);    
-  return 0;
-}

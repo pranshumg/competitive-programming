@@ -12,11 +12,3 @@ void print_name_n_times(string s, int n) {
   print_name_n_times(s, n - 1);
 }
 
-int main() {
-  string s;
-  getline(cin, s);
-  int n;
-  cin >> n;
-  print_name_n_times(s, n);    
-  return 0;
-}

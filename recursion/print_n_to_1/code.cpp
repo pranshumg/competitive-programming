@@ -12,9 +12,4 @@ void print_n_to_1(int n) {
   print_n_to_1(n - 1);
 }
 
-int main() {
-  int n;
-  cin >> n;
-  print_n_to_1(n);    
-  return 0;
-}
+

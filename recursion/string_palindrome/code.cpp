@@ -14,9 +14,4 @@ bool palindrome(string s, int i, int n) {
   return palindrome(s, i + 1, n);
 }
 
-int main() {
-  string s;
-  cin >> s;
-  cout << boolalpha << palindrome(s, 0, (int)s.size());    
-  return 0;
-}
+
