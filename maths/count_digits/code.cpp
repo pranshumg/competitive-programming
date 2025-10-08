@@ -2,25 +2,19 @@
 
 using namespace std;
 
+/* Count digits */
 // Method 1 
 // TC - O(log n)
-int func1(int n) {
-    int cnt = 0;
-    while (n > 0) {
-        cnt++, n /= 10;
-    }
-    return cnt;
+int count_digits(int n) {
+  int cnt = 0;
+  while (n > 0) {
+    cnt++, n /= 10;
+  }
+  return cnt;
 }
 
 // Method 2
 // TC - O(1)
-int func2(int n) {
-    return (int)(log10(n) + 1);
-}
-
-int main() {
-    int n;
-    cin >> n;
-    cout << func2(n) << '\n';    
-    return 0;
+int count_digits(int n) {
+  return (int)(log10(n) + 1);
 }
