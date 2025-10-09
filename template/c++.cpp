@@ -11,12 +11,12 @@ using ld = long double;
 using int128 = __int128;
 using uint128 = unsigned __int128;
 
-constexpr int MOD  = 1e9 + 7;
+constexpr int MOD = 1e9 + 7;
 constexpr int MOD1 = 998244353;
-constexpr int INF  = 1e9;
-constexpr ll LINF  = 1e18;
-constexpr ld PI    = 3.1415926535897932384626433832795L;
-constexpr int N    = 2e5 + 5;
+constexpr int INF = 1e9;
+constexpr ll LINF = 1e18;
+constexpr ld PI = 3.1415926535897932384626433832795L;
+constexpr int N = 2e5 + 5;
 
 #define pb push_back
 #define ppb pop_back
