@@ -8,6 +8,8 @@ using namespace std;
 using ll = long long;
 using ull = unsigned long long;
 using ld = long double;
+using int128 = __int128;
+using uint128 = unsigned __int128;
 
 constexpr int MOD  = 1e9 + 7;
 constexpr int MOD1 = 998244353;
