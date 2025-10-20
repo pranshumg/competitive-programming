@@ -6,7 +6,7 @@ using namespace std;
 
 // TC - O(n * n), SC - O(1)
 pair<int, int> max_min(vector<int>& v) {
-  int mini = 0, maxi = 0;
+  int mini = INT_MAX, maxi = INT_MIN;
   for (auto it: v) {
     if (it != 0) {
       mini = min(mini, it);
