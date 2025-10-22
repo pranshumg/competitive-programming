@@ -41,7 +41,7 @@ int count_primes(int L, int R) {
   return cnt;
 }
 
-// TC - O(1e6 log log 1e6 + (R - L + 1)), SC - (1e6)
+// TC - O(1e6 log log 1e6 + (R - L + 1)), SC - O(1e6)
 int count_primes(int L, int R) {
   vector<int> primes = sieve((int)1e6);
   int cnt = 0;
