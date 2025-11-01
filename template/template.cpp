@@ -44,8 +44,7 @@ int main() {
   cin.tie(nullptr);
   int tests;
   cin >> tests;
-  for (int tc = 1; tc <= tests; ++tc) {
-    cout << "Case #" << tc << ": ";
+  while (tests--) {
     run_case();
   }
   return 0;
