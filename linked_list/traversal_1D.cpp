@@ -26,6 +26,7 @@ Node* convert_v_to_ll(vector<int>& v) {
   return head;
 }
 
+// TC - O(n), SC - O(1)
 void traversal(Node* head) {
   Node* tmp = head;
   while (tmp) {
