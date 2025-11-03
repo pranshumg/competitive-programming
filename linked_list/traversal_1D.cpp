@@ -16,7 +16,7 @@ public:
 };
 
 // TC - O(n), SC - O(1)
-void traversal(Node* head) {
+void traverse(Node* head) {
   Node* tmp = head;
   while (tmp) {
     cout << tmp->data << ' ';
