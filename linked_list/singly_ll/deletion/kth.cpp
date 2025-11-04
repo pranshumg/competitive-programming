@@ -28,8 +28,8 @@ Node* delete_kth(Node* head, int k) {
   }
   int cnt = 0;
   Node* tmp = head;
-  Node* prev = NULL;
-  while (tmp != NULL) {
+  Node* prev = nullptr;
+  while (tmp != nullptr) {
     ++cnt;
     if (cnt == k) {
       prev->next = tmp->next;
