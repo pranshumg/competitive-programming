@@ -6,20 +6,14 @@ using namespace std;
 
 // TC - O(n log log n), SC - O(n)
 vector<int> seive(int n) {
-  vector<bool> is_prime(n + 1, true);
-  is_prime[0] = is_prime[1] = false;
+  vector<int> is_prime(n + 1, 1);
+  is_prime[0] = is_prime[1] = 0;
   for (int i = 2; i * i <= n; ++i) {
     if (is_prime[i]) {
       for (int j = i * i; j <= n; j += i) {
-        is_prime[j] = false;
+        is_prime[j] = 0;
       }
     }
   }
-  vector<int> primes;
-  for (int i = 2; i <= n; ++i) {
-    if (is_prime[i]) {
-      primes.emplace_back(i);
-    }
-  }
-  return primes;
+  return is_prime;
 }
