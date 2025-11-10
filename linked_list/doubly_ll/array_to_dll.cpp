@@ -15,7 +15,7 @@ public:
   }
 
   Node(int val, Node* next, Node* prev) {
-    data = val;
+    this->data = val;
     this->next = next;
     this->prev = prev;
   }
