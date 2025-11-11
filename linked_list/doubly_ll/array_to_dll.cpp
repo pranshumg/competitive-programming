@@ -8,14 +8,14 @@ public:
   Node* next;
   Node* prev;
 
-  Node(int val) {
-    data = val;
-    next = nullptr;
-    prev = nullptr;
+  Node(int data) {
+    this->data = data;
+    this->next = nullptr;
+    this->prev = nullptr;
   }
 
-  Node(int val, Node* next, Node* prev) {
-    this->data = val;
+  Node(int data, Node* next, Node* prev) {
+    this->data = data;
     this->next = next;
     this->prev = prev;
   }

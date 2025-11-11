@@ -9,14 +9,14 @@ public:
   int data;
   Node* next;
 
-  Node(int val) {
-    data = val;
-    next = nullptr;
+  Node(int data) {
+    this->data = data;
+    this->next = nullptr;
   }
 
-  Node(int val, Node* ptr) {
-    data = val;
-    next = ptr;
+  Node(int data, Node* next) {
+    this->data = data;
+    this->next = next;
   }
 };
 
