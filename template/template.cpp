@@ -33,7 +33,7 @@ using mci = map<char, int>;
 #define ss second
 
 void run_case() {
-  
+  ${0}
 }
 
 int main() {
