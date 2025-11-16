@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* Insert head of a doubly linked list */
+/* Insert before head of a doubly linked list */
 
 class Node {
 public:
