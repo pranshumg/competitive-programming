@@ -24,7 +24,7 @@ public:
 };
 
 // TC - O(1), SC - O(1)
-Node* delete_node(Node* tmp) {
+void delete_node(Node* tmp) {
   Node* back = tmp->prev;
   Node* front = tmp->next;
   if (front == nullptr) {
