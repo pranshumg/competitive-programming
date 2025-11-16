@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* Insert before head of a doubly linked list */
+/* Insert beforehead of a doubly linked list */
 
 class Node {
 public:
@@ -26,6 +26,8 @@ public:
 // TC - O(1), SC - O(1)
 Node* insert_head(Node* head, int val) {
   Node* new_node = new Node(val, head, nullptr);
-  head->prev = new_node;
+  if (head != nullptr) {
+    head->prev = new_node;
+  }
   return new_node; 
 }
