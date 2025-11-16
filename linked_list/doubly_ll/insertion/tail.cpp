@@ -23,6 +23,7 @@ public:
   }
 };
 
+// TC - O(n), SC - O(1)
 Node* insert_tail(Node* head, int val) {
   if (head == nullptr) {
     Node* new_node = new Node(val);
