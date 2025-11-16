@@ -2,6 +2,8 @@
 
 using namespace std;
 
+/* Convert array to doubly linked list */
+
 class Node {
 public:
   int data;
