@@ -17,8 +17,8 @@ public:
 
 // TC - O(1), SC - O(1)
 Node* delete_head(Node* head) {
-  if (head == NULL) {
-    return NULL;
+  if (head == nullptr) {
+    return nullptr;
   }
   Node* tmp = head;
   head = head->next;
