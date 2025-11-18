@@ -32,6 +32,8 @@ Node* reverse(Node* head) {
   return head;
 }
 
+/* Optimal (iterative)*/
+
 // TC - O(n), SC - O(1)
 Node* reverse(Node* head) {
   Node* tmp = head;
@@ -43,4 +45,18 @@ Node* reverse(Node* head) {
     tmp = front;
   }
   return back;
+}
+
+/* Optimal (recursive) */
+
+// TC - O(n), SC - O(n)
+Node* reverse(Node* head) {
+  if (head == nullptr || head->next == nullptr) {
+    return head;
+  }
+  Node* new_head = reverse(head->next);
+  Node* front = head->next;
+  front->next = head;
+  head->next = nullptr;
+  return new_head;
 }
