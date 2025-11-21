@@ -10,7 +10,6 @@ using ld = long double;
 using ull = unsigned long long;
 
 #define eb emplace_back
-#define mpr make_pair
 #define ff first
 #define ss second
 #define all(x) (x).begin(), (x).end()
