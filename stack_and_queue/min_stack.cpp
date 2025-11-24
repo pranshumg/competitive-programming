@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* Min stack */
+/* Min Stack */
 
 // TC - O(1), SC - O(n)
 class min_stack {
