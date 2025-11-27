@@ -7,6 +7,12 @@ using namespace std;
 #define ss second
 #define all(x) (x).begin(), (x).end()
 
+inline int ri() {
+  int x;
+  cin >> x;
+  return x;
+}
+
 void run_case() {
   ${0}
 }
