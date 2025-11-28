@@ -7,9 +7,6 @@ using ull = unsigned long long;
 using i128 = __int128;
 using u128 = unsigned __int128;
 
-#define eb emplace_back
-#define ff first
-#define ss second
 #define all(x) (x).begin(), (x).end()
 
 void run_case() {
