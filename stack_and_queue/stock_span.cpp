@@ -8,7 +8,6 @@ using namespace std;
 class stock_spanner {
 public:
   vector<int> v;
-  int idx;
 
   stock_spanner() {
     
