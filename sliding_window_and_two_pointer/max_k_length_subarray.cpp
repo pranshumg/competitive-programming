@@ -8,7 +8,7 @@ using namespace std;
 int max_sum(vector<int>& v, int k) {
   int n = (int)v.size();
   int sum = accumulate(v.begin(), v.begin() + k, 0);
-  int ans = sum, l = 0, r = k - 1;
+  int ans = sum, l = 0, r = k;
   while (r < n) {
     sum -= v[l++];
     sum += v[r++];
