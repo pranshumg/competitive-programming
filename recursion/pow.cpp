@@ -6,19 +6,18 @@ using namespace std;
 
 // iterative
 // TC - O(log n), SC - O(1)
-double pow(double x, int n) {
+double pow(double x, long long n) {
   double ans = 1.0;
-  long long N = n;
   if (n < 0) {
-    N = (long long)-1 * n;
+    n = -1 * n;
   }
-  while (N) {
-    if (N & 1) {
+  while (n) {
+    if (n & 1) {
       ans *= x;
-      N -= 1;
+      n -= 1;
     } else {
       x *= x;
-      N >>= 1;
+      n >>= 1;
     }
   }
   if (n < 0) {
