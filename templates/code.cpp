@@ -9,17 +9,17 @@ using u128 = unsigned __int128;
 
 #define all(x) (x).begin(), (x).end()
 
-void run_case() {
-  $0
+void solve() {
+  
 }
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  int tests;
-  cin >> tests;
-  while (tests--) {
-    run_case();
+  int t;
+  cin >> t;
+  while (t--) {
+    solve();
   }
   return 0;
 }
