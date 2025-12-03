@@ -10,7 +10,7 @@ using u128 = unsigned __int128;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-  
+  $0
 }
 
 int main() {
