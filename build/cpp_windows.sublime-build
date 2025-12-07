@@ -1,6 +1,6 @@
 {
-  "shell_cmd": "g++ -std=gnu++23 \"$file\" -o \"$file_path\\$file_base_name.exe\" 2> \"$file_path\\error.txt\" && \"$file_path\\$file_base_name.exe\" < \"$file_path\\input.txt\" > \"$file_path\\output.txt\"",
+  "shell_cmd": "g++ -std=gnu++23 \"${file}\" -o \"${file_path}\\${file_base_name}.exe\" && \"${file_path}\\${file_base_name}.exe\" < input.txt > output.txt",
+  "working_dir": "${file_path}",
   "file_regex": "^(.*?):([0-9]+):([0-9]+):",
-  "selector": "source.c++",
-  "working_dir": "$file_path"
+  "selector": "source.c++"
 }
