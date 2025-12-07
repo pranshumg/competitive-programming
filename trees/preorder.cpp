@@ -16,12 +16,36 @@ public:
     }
 };
 
+// Recursive
 // TC - O(n), SC - O(n)
-void preorder(Node* root) {
+void preorder_rec(Node* root) {
     if (root == nullptr) {
         return;
     }
     cout << root->val;
-    preorder(root->left);
-    preorder(root->right);
+    preorder_rec(root->left);
+    preorder_rec(root->right);
+}
+
+// Iterative
+// TC - O(n), SC - O(n)
+vector<int> preorder(Node* root) {
+    vector<int> ans;
+    if (root == nullptr) {
+        return ans;
+    }
+    stack<Node*> sk;
+    sk.emplace(root);
+    while (!sk.empty()) {
+        root = sk.top();
+        sk.pop();
+        ans.emplace_back(root->val);
+        if (root->right != nullptr) {
+            sk.emplace(root->right);
+        }
+        if (root->left != nullptr) {
+            sk.emplace(root->left);
+        }
+    }
+    return ans;
 }
