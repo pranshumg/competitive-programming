@@ -4,7 +4,6 @@ using namespace std;
 
 using ll = long long;
 using ull = unsigned long long;
-using u32 = unsigned;
 using i128 = __int128;
 using u128 = unsigned __int128;
 
@@ -15,7 +14,7 @@ void solve() {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t;
     cin >> t;
