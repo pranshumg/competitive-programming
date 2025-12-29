@@ -5,8 +5,8 @@ using namespace std;
 using i64 = int64_t;
 using u64 = uint64_t;
 using u32 = uint32_t;
-using i128 = __int128;
-using u128 = unsigned __int128;
+using i128 = __int128_t;
+using u128 = __uint128_t;
 
 #define all(x) (x).begin(), (x).end()
 
