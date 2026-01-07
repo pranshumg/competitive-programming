@@ -7,7 +7,7 @@ using namespace std;
 // TC - O(n)
 vector<int> divisors(int n) {
     vector<int> ans;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; ++i) {
         if (n % i == 0) {
             ans.emplace_back(i);
         }
@@ -18,7 +18,7 @@ vector<int> divisors(int n) {
 // TC - O(sqrt(n))
 vector<int> divisors(int n) {
     vector<int> ans;
-    for (int i = 1; i * i <= n; i++) {
+    for (int i = 1; i * i <= n; ++i) {
         if (n % i == 0) {
             ans.emplace_back(i);
             // If the pair divisor is different, push it too
