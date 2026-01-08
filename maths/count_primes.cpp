@@ -68,7 +68,7 @@ int count_primes(int L, int R) {
     int cnt = 0;
     for (int i = 0; i < (int)primes.size(); ++i) {
         if (is_prime[i]) {
-            cnt++;
+            ++cnt;
         }
         primes[i] = cnt;
     }
