@@ -2,36 +2,36 @@
 
 using namespace std;
 
-// TC - O(n log n)
-// SC - O(n)
-void merge(vector<int>& v, int low, int mid, int high) {
-  vector<int> tmp;
-  int left = low, right = mid + 1;
-  while (left <= mid && right <= high) {
-    if (v[left] <= v[right]) {
-      tmp.push_back(v[left++]);
-    } else {
-      tmp.push_back(v[right++]);
+/* Merge sort */
+
+void merge(vector<int>& v, int l, int m, int h) {
+    vector<int> tmp;
+    int i = l, j = m + 1;
+    while (i <= m && j <= h) {
+        if (v[i] <= v[j]) {
+            tmp.emplace_back(v[i++]);
+        } else {
+            tmp.emplace_back(v[j++]);
+        }
     }
-  }
-  while (left <= mid) {
-    tmp.push_back(v[left++]);
-  }
-  while (right <= high) {
-    tmp.push_back(v[right++]);
-  }
-  for (int i = low; i <= high; i++) {
-    v[i] = tmp[i - low];
-  }
+    while (i <= m) {
+        tmp.emplace_back(v[i++]);
+    }
+    while (j <= h) {
+        tmp.emplace_back(v[j++]);
+    }
+    for (int i = l; i <= h; ++i) {
+        v[i] = tmp[i - l];
+    }
 }
 
-void merge_sort(vector<int>& v, int low, int high) {
-  if (low >= high) {
-    return;
-  }
-  int mid = (low + high) / 2;
-  merge_sort(v, low, mid);
-  merge_sort(v, mid + 1, high);
-  merge(v, low, mid, high);
-} 
-
+// TC - O(n log n), SC - O(n)
+void merge_sort(vector<int>& v, int l, int h) {
+    if (l >= h) {
+        return;
+    }
+    int m = (l + h) >> 1;
+    merge_sort(v, l, m);
+    merge_sort(v, m + 1, h);
+    merge(v, l, m, h);
+}
