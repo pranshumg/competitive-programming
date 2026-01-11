@@ -12,11 +12,9 @@ double pow(double x, int n) {
     while (m > 0) {
         if (m & 1) {
             ans *= x;
-            --m;
-        } else {
-            x *= x;
-            m >>= 1;
         }
+        x *= x;
+        m >>= 1;
     }
     if (n < 0) {
         ans = 1.0 / ans;
