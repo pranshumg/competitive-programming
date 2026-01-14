@@ -63,12 +63,12 @@ int second_smallest_element(vector<int>& v, int n) {
 // TC - O(n), SC - O(1)
 int second_smallest_element(vector<int>& v, int n) {
     int smallest = v[0], second_smallest = INT_MAX;
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i < n; ++i) {
         if (v[i] < smallest) {
             smallest = v[i];
         }
     }
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; ++i) {
         if (v[i] < second_smallest && v[i] != smallest) {
             second_smallest = v[i];
         }
