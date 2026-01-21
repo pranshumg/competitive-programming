@@ -16,7 +16,7 @@ void rotate_left_by_one_place(vector<int>& v, int n) {
 // TC - O(n), SC - O(1)
 void rotate_right_by_one_place(vector<int>& v, int n) {
     int tmp = v[n - 1];
-    for (int i = n - 1; i > 0; i--) {
+    for (int i = n - 1; i > 0; --i) {
         v[i] = v[i - 1];
     }
     v[0] = tmp;
