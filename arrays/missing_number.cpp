@@ -3,51 +3,60 @@
 using namespace std;
 
 /* Missing Number */
-// Brute (TC - O(n²), SC - O(1))
-int missing_number(vector<int>& v, int n) {
-  for (int i = 1; i <= n + 1; i++) {
-    bool flag = false;
-    for (int j = 0; j < n; j++) {
-      if (i == v[j]) {
-        flag = true;
-        break;
-      }
-    }
-    if (!flag) {
-      return i;
-    }
-  }
-} 
 
-// Better (TC - O(n), SC - O(n))
+// Brute 
+// TC - O(n * n), SC - O(1)
 int missing_number(vector<int>& v, int n) {
-  vector<int> hash(n + 1, 0);
-  for (int i = 0; i < n; i++) {
-    hash[v[i]]++;
-  }
-  for (int i = 1; i <= n + 1; i++) {
-    if (hash[i] == 0) {
-      return i;
+    for (int i = 1; i <= n + 1; ++i) {
+        bool f = false;
+        for (int j = 0; j < n; ++j) {
+            if (i == v[j]) {
+                f = true;
+                break;
+            }
+        }
+        if (!f) {
+            return i;
+        }
     }
-  }
+    return -1; 
 }
 
-// Optimal (TC - O(n), SC - O(1))
+// Better (using hashing)
+// TC - O(n), SC - O(n)
 int missing_number(vector<int>& v, int n) {
-  int sum1 = ((n + 1) * (n + 2)) / 2, sum2 = 0;
-  for (int i = 0; i < n; i++) {
-    sum2 += v[i];
-  }
-  return sum1 - sum2;
+    // Size is n + 2 to handle numbers up to n+1
+    vector<int> hash(n + 2, 0);
+    for (auto &it : v) {
+        ++hash[it];
+    }
+    for (int i = 1; i <= n + 1; i++) {
+        if (!hash[i]) {
+            return i;
+        }
+    }
+    return -1;
 }
 
-// Optimal (TC - O(n), SC - O(1))
+// Optimal (using sum)
+// TC - O(n), SC - O(1)
 int missing_number(vector<int>& v, int n) {
-  int xor1 = 0, xor2 = 0;
-  for (int i = 0; i < n; i++) {
-    xor1 ^= (i + 1);
-    xor2 ^= v[i];
-  }
-  xor1 ^= (n + 1);
-  return xor1 ^ xor2;
+    int64_t s1 = ((int64_t)(n + 1) * (n + 2)) / 2;
+    int64_t s2 = 0;
+    for (auto &it : v) {
+        s2 += it;
+    }
+    return (int)(s1 - s2);
+}
+
+// Optimal (using XOR)
+// TC - O(n), SC - O(1)
+int missing_number(vector<int>& v, int n) {
+    int x1 = 0, x2 = 0;
+    for (int i = 0; i < n; ++i) {
+        x1 ^= (i + 1); // XOR of 1 to n
+        x2 ^= v[i];    // XOR of array elements
+    }
+    x1 ^= (n + 1);     // include (n + 1) in the range XOR
+    return x1 ^ x2;
 }
