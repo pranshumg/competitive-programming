@@ -3,54 +3,59 @@
 using namespace std;
 
 /* Longest subarray with sum k */
-// Brute (TC - O(n²), SC - O(1))
+
+// Brute 
+// TC - O(n * n), SC - O(1)
 int longest_subarray(vector<int>& v, int n, int k) {
-  int len = 0;
-  for (int i = 0; i < n; i++) {
-    int sum = 0;
-    for (int j = i; j < n; j++) {
-      sum += v[j];
-      if (sum == k) {
-        len = max(len, j - i + 1);
-      }
+    int len = 0;
+    for (int i = 0; i < n; ++i) {
+        int sum = 0;
+        for (int j = i; j < n; ++j) {
+            sum += v[j];
+            if (sum == k) {
+                len = max(len, j - i + 1);
+            }
+        }
     }
-  }
-  return len;
+    return len;
 }
 
-// Better (TC - O(n), SC - O(n))
+// Better
+// TC - O(n), SC - O(n)
+// Works for both positive and negative numbers
 int longest_subarray(vector<int>& v, int n, int k) {
-  unordered_map<int, int> pre_sum;
-  int len = 0, sum = 0;
-  for (int i = 0; i < n; i++) {
-    sum += v[i];
-    if (sum == k) {
-      len = max(len, i + 1);
+    map<int, int> pre;
+    int len = 0, sum = 0;
+    for (int i = 0; i < n; ++i) {
+        sum += v[i];
+        if (sum == k) {
+            len = max(len, i + 1);
+        }
+        if (pre.find(sum - k) != pre.end()) {
+            len = max(len, i - pre[sum - k]);
+        }
+        if (pre.find(sum) == pre.end()) {
+            pre[sum] = i;
+        }
     }
-    if (pre_sum.find(sum - k) != pre_sum.end()) {
-      len = max(len, i - pre_sum[sum - k]);
-    }
-    if (pre_sum.find(sum) == pre_sum.end()) {
-      pre_sum[sum] = i;
-    }
-  }
-  return len;
+    return len;
 }
 
-// Optimal (TC - O(n), SC - O(1))
+// Optimal 
+// TC - O(n), SC - O(1)
+// NOTE: This approach ONLY works if the array contains non-negative integers.
+// If the array contains negative numbers, you must use the hashing approach above.
 int longest_subarray(vector<int>& v, int n, int k) {
-  int left = 0, right = 0, len = 0, sum = v[0];
-  while (right < n) {
-    while (left <= right && sum > k) {
-      sum -= v[left++];
+    int l = 0, r = 0, len = 0, sum = 0;
+    while (r < n) {
+        sum += v[r];
+        while (l <= r && sum > k) {
+            sum -= v[l++];
+        }
+        if (sum == k) {
+            len = max(len, r - l + 1);
+        }
+        ++r;
     }
-    if (sum == k) {
-      len = max(len, right - left + 1);
-    }
-    right++;
-    if (right < n) {
-      sum += v[right];
-    }
-  }
-  return len;
+    return len;
 }
