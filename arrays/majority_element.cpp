@@ -3,47 +3,53 @@
 using namespace std;
 
 /* Majority element */
-// Brute (TC - O(n²), SC - O(1))
+
+// Brute 
+// TC - O(n * n), SC - O(1)
 int majority_element(vector<int>& v, int n) {
-  for (int i = 0; i < n; i++) {
-    int cnt = 0;
-    for (int j = 0; j < n; j++) {
-      if (v[i] == v[j]) {
-        cnt++;
-      }
+    for (int i = 0; i < n; ++i) {
+        int cnt = 0;
+        for (int j = 0; j < n; ++j) {
+            if (v[i] == v[j]) {
+                ++cnt;
+            }
+        }
+        if (cnt > n / 2) {
+            return v[i];
+        }
     }
-    if (cnt > n / 2) {
-      return v[i];
-    }
-  }
-  return -1;
+    return -1;
 }
 
-// Better (TC - O(n), SC - O(n))
+// Better Approach (using Hashing)
+// TC - O(n), SC - O(n)
 int majority_element(vector<int>& v, int n) {
-  unordered_map<int, int> mp;
-  for (int i = 0; i < n; i++) {
-    mp[v[i]]++;
-  }
-  for (auto it : mp) {
-    if (it.second > n / 2) {
-      return it.first;
+    map<int, int> mp;
+    for (auto &it : v) {
+        ++mp[it];
     }
-  }
-  return -1;
+    for (auto &it : mp) {
+        if (it.second > n / 2) {
+            return it.first;
+        }
+    }
+    return -1;
 }
 
 // Moore's Voting Algorithm (Optimal)
-// (TC - O(n), SC - O(1))
+// TC - O(n), SC - O(1)
 int majority_element(vector<int>& v, int n) {
-  int cnt = 0, el;
-  for (int i = 0; i < n; i++) {
-    if (cnt == 0) {
-      el = v[i];
-      cnt++;
-    } else if (v[i] == el) {
-      cnt++;
-    } else {
-      cnt--;
+    int cnt = 0, el = 0;
+    for (int i = 0; i < n; ++i) {
+        if (cnt == 0) {
+            el = v[i], cnt = 1;
+        } else if (v[i] == el) {
+            ++cnt;
+        } else {
+            --cnt;
+        }
     }
-  }
+    // Note: If the majority element is NOT guaranteed to exist, 
+    // you must verify 'el' by counting its frequency here.
+    return el; 
+}
