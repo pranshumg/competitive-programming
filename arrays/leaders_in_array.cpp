@@ -3,34 +3,40 @@
 using namespace std;
 
 /* Leaders in an array */
-// Brute (TC - O(n²), SC - O(n))
+
+// Brute 
+// TC - O(n * n), SC - O(n) (for storing the result)
 vector<int> leaders(vector<int>& v, int n) {
-  vector<int> res;
-  for (int i = 0; i < n; i++) {
-    bool flag = true;
-    for (int j = i + 1; j < n; j++) {
-      if (v[j] > v[i]) {
-        flag = false;
-        break;
-      }
+    vector<int> res;
+    for (int i = 0; i < n; ++i) {
+        bool is_leader = true;      
+        // Check all elements to the right
+        for (int j = i + 1; j < n; ++j) {
+            if (v[j] > v[i]) {
+                is_leader = false;
+                break;
+            }
+        }
+        if (is_leader) {
+            res.emplace_back(v[i]);
+        }
     }
-    if (flag) {
-      res.push_back(v[i]);
-    }
-  }
-  return res;
+    return res;
 }
 
-// Optimal (TC - O(n), SC - O(n))
+// Optimal Approach
+// TC - O(n), SC - O(n) (for storing the result)
 vector<int> leaders(vector<int>& v, int n) {
-  vector<int> res;
-  int maxi = INT_MIN;
-  for (int i = n - 1; i >= 0; i--) {
-    if (v[i] > maxi) {
-      res.push_back(v[i]);
-      maxi = v[i];
+    vector<int> res;
+    int mx = INT_MIN;
+    // Iterate from right to left
+    for (int i = n - 1; i >= 0; --i) {
+        if (v[i] > mx) {
+            res.emplace_back(v[i]);
+            mx = v[i];
+        }
     }
-  }
-  reverse(res.begin(), res.end());
-  return res;
+    // The result is currently in reverse order (rightmost leader first)
+    reverse(res.begin(), res.end());
+    return res;
 }
