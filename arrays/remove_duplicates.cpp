@@ -11,14 +11,14 @@ int remove_duplicates(vector<int>& v, int n) {
         st.insert(v[i]);
     }
     int idx = 0;
-    for (auto it : st) {
+    for (auto &it : st) {
         v[idx++] = it;
     }
     return (int)st.size();
 }
 
 // Optimal (TC - O(n), SC - O(1))
-int remove_duplicates_optimal(vector<int>& v, int n) {
+int remove_duplicates(vector<int>& v, int n) {
     int i = 0, j = 1;
     while (j < n) {
         if (v[i] != v[j]) {
