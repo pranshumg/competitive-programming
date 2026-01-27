@@ -3,46 +3,54 @@
 using namespace std;
 
 /* Maximum Product Subarray */
-// Brute (TC - O(n³), SC - O(1))
+
+// Brute 
+// TC - O(n * n * n), SC - O(1)
 int max_product(vector<int>& v, int n) {
-  int ans = INT_MIN;
-  for (int i = 0; i < n; i++) {
-    for (int j = i; j < n; j++) {
-      int prod = 1;
-      for (int k = i; k <= j; k++) {
-        prod *= v[k];
-      }
-      ans = max(ans, prod);
+    int ans = INT_MIN;
+    for (int i = 0; i < n; ++i) {
+        for (int j = i; j < n; ++j) {
+            int prod = 1;
+            for (int k = i; k <= j; ++k) {
+                prod *= v[k];
+            }
+            ans = max(ans, prod);
+        }
     }
-  }
-  return ans;
+    return ans;
 }
 
-// Better (TC - O(n²), SC - O(1))
+// Better 
+// TC - O(n * n), SC - O(1)
 int max_product(vector<int>& v, int n) {
-  int ans = INT_MIN;
-  for (int i = 0; i < n; i++) {
-    int prod = 1;
-    for (int j = i; j < n; j++) {
-      prod *= v[j];
-      ans = max(ans, prod);
+    int ans = INT_MIN;
+    for (int i = 0; i < n; ++i) {
+        int prod = 1;
+        for (int j = i; j < n; ++j) {
+            prod *= v[j];
+            ans = max(ans, prod);
+        }
     }
-  }
-  return ans;
+    return ans;
 }
 
-// Optimal (TC - O(n), SC - O(1))
+// Optimal 
+// TC - O(n), SC - O(1)
+// Note: This approach handles negative numbers by checking prefix and suffix products.
+// If there are an even number of negatives, the full array is the answer.
+// If odd, the answer lies on either side of one of the negatives.
 int max_product(vector<int>& v, int n) {
-  int prefix = 1, suffix = 1, ans = INT_MIN;
-  for (int i = 0; i < n; i++) {
-    if (prefix == 0) {
-      prefix = 1;
+    int pfx = 1, sfx = 1, ans = INT_MIN;
+    for (int i = 0; i < n; ++i) {
+        if (pfx == 0) {
+            pfx = 1;
+        }
+        if (sfx == 0) {
+            sfx = 1;
+        }
+        pfx *= v[i];
+        sfx *= v[n - i - 1];
+        ans = max(ans, max(pfx, sfx));
     }
-    if (suffix == 0) {
-      suffix = 1;
-    }
-    prefix *= v[i], suffix *= v[n - i - 1];
-    ans = max(ans, max(prefix, suffix));
-  }
-  return ans;
+    return ans;
 }
