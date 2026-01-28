@@ -7,6 +7,10 @@ using namespace std;
 // TC - O(log n)
 int count_digits(int n) {
     int cnt = 0;
+    if (!n) {
+        return 1;
+    }
+    n = abs(n);
     while (n) {
         ++cnt, n /= 10;
     }
@@ -15,5 +19,6 @@ int count_digits(int n) {
 
 // TC - O(1)
 int count_digits(int n) {
-    return (int)(log10(n) + 1);
+    n = abs(n);
+    return n ? (int)(log10(n) + 1) : 1;
 }
