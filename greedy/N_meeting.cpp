@@ -10,17 +10,14 @@ struct Data {
 
 // TC - O(n log n), SC - O(n)
 pair<int, vector<int>> meetings(vector<int>& start, vector<int>& end) {
-    vector<Data> v((int)start.size());
+    vector<Data> v((int)start.size()); 
     for (int i = 0; i < (int)v.size(); ++i) {
         v[i].start = start[i];
         v[i].end = end[i];
         v[i].pos = i + 1;
     }
     sort(v.begin(), v.end(), [](auto& a, auto& b) {
-        if (a.end != b.end) {
-            return a.end < b.end;
-        }
-        return a.id < b.id;
+        return a.end < b.end;
     });
     vector<int> ans;
     int freetime = -1;
