@@ -25,5 +25,5 @@ int find_platform(vector<int>& arr, vector<int>& dep) {
         // Keep track of the maximum platforms needed at any instant.
         ans = max(ans, cnt);
     }
-    return ans; 
+    return ans;
 }
