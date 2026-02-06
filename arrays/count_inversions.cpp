@@ -23,20 +23,20 @@ int inversions(vector<int>& v, int n) {
 int merge_count(vector<int>& v, int l, int m, int h) {
     int cnt = 0;
     vector<int> tmp;
-    int left = l, right = m + 1;
-    while (left <= m && right <= h) {
-        if (v[left] <= v[right]) {
-            tmp.emplace_back(v[left++]);
+    int i = l, j = m + 1;
+    while (i <= m && j <= h) {
+        if (v[i] <= v[j]) {
+            tmp.emplace_back(v[i++]);
         } else {
-            cnt += m - left + 1;
-            tmp.emplace_back(v[right++]);
+            cnt += m - i + 1;
+            tmp.emplace_back(v[j++]);
         }
     }
-    while (left <= m) {
-        tmp.emplace_back(v[left++]);
+    while (i <= m) {
+        tmp.emplace_back(v[i++]);
     }
-    while (right <= h) {
-        tmp.emplace_back(v[right++]);
+    while (j <= h) {
+        tmp.emplace_back(v[j++]);
     }
     for (int i = l; i <= h; i++) {
         v[i] = tmp[i - l];
