@@ -38,7 +38,7 @@ int merge_count(vector<int>& v, int l, int m, int h) {
     while (j <= h) {
         tmp.emplace_back(v[j++]);
     }
-    for (int i = l; i <= h; i++) {
+    for (int i = l; i <= h; ++i) {
         v[i] = tmp[i - l];
     }
     return cnt;
