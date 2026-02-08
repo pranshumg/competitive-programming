@@ -21,7 +21,7 @@ vector<vector<int>> generate(int n) {
     vector<vector<int>> ans;
     for (int r = 0; r < n; ++r) {
         vector<int> tmp;
-        for (int c = 0; c <= r; c++) {
+        for (int c = 0; c <= r; ++c) {
             tmp.emplace_back((int)nCr(r, c));
         }
         ans.emplace_back(tmp);
