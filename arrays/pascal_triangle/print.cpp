@@ -3,45 +3,52 @@
 using namespace std;
 
 /* Print Pascal Triangle */
-// Brute (TC - O(r³), SC - O(1))
+
+// Helper for Brute Force
+// TC - O(r), SC - O(1)
 int64_t nCr(int n, int r) {
-  int64_t res = 1;
-  for (int i = 0; i < r; i++) {
-    res = res * (n - i);
-    res = res / (i + 1);
-  }
-  return res;
-}
-
-vector<vector<int>> generate(int r) {
-  vector<vector<int>> ans;
-  for (int row = 0; row < r; row++) {
-    vector<int> tmp;
-    for (int col = 0; col <= row; col++) {
-      tmp.push_back(nCr(row, col));
+    int64_t res = 1;
+    for (int i = 0; i < r; ++i) {
+        res *= (n - i);
+        res /= (i + 1);
     }
-    ans.push_back(tmp);
-  }
-  return ans;
+    return res;
 }
 
-// Optimal (TC - O(n²), SC - O(1))
+// Brute Force approach to generate the whole triangle
+// TC - O(n * n * n), SC - O(1) (excluding output storage)
+vector<vector<int>> generate(int n) {
+    vector<vector<int>> ans;
+    for (int r = 0; r < n; ++r) {
+        vector<int> tmp;
+        for (int c = 0; c <= r; c++) {
+            tmp.emplace_back((int)nCr(r, c));
+        }
+        ans.emplace_back(tmp);
+    }
+    return ans;
+}
+
+// Optimal helper to generate a single row
+// TC - O(r), SC - O(1)
 vector<int> generate_row(int r) {
-  vector<int> row;
-  int64_t ans = 1;
-  row.push_back(1);
-  for (int col = 1; col < r; col++) {
-    ans = ans * (r - col);
-    ans = ans / col;
-    row.push_back(ans);
-  }
-  return row;
+    vector<int> row;
+    int64_t ans = 1;
+    row.emplace_back(1);
+    for (int c = 1; c < r; ++c) {
+        ans *= (r - c);
+        ans /= c;
+        row.emplace_back((int)ans);
+    }
+    return row;
 }
 
-vector<vector<int>> generate(int r) {
-  vector<vector<int>> ans;
-  for (int row = 1; row <= r; row++) {
-    ans.push_back(generate_row(row));
-  }
-  return ans;
+// Optimal approach to generate the whole triangle
+// TC - O(n²), SC - O(1) (excluding output storage)
+vector<vector<int>> generate(int n) {
+    vector<vector<int>> ans;
+    for (int r = 1; r <= n; ++r) {
+        ans.emplace_back(generate_row(r));
+    }
+    return ans;
 }
