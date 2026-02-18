@@ -2,17 +2,19 @@
 
 using namespace std;
 
-/* lower bound */
-// TC - O(log n), SC - O(1)
+/* Lower Bound: Finds the first index `i` such that v[i] >= target.
+   If no such element exists, it returns `n`.
+   TC - O(log n), SC - O(1)
+*/
 int lower_bound(vector<int>& v, int n, int target) {
-  int low = 0, high = n - 1, ans = n;
-  while (low <= high) {
-    int mid = (low + high) / 2;
-    if (v[mid] >= target) {
-      ans = mid, high = mid - 1;
-    } else {
-      low = mid + 1;
+    int l = 0, h = n - 1;
+    while (l <= h) {
+        int m = l + ((h - l) >> 1);
+        if (v[m] >= target) {
+            h = m - 1;
+        } else {
+            l = m + 1;  
+        }
     }
-  }
-  return ans;
+    return l;
 }
