@@ -6,19 +6,19 @@ using namespace std;
    TC - O(log n), SC - O(1)
 */
 int search_insert_position(vector<int>& v, int n, int target) {
-    int l = 0, h = n - 1;
-    while (l <= h) {
-        // Optimized midpoint to prevent overflow
-        int m = l + ((h - l) >> 1);
-        if (v[m] >= target) {
-            // This is either the target or where the target would go.
-            // Move left to see if there's an even earlier valid position.
-            h = m - 1;
-        } else {
-            // Too small, must look to the right.
-            l = m + 1;
-        }
+  int low = 0, high = n - 1;
+  while (low <= high) {
+    // Optimized midpoint to prevent overflow
+    int mid = low + (high - low) / 2;
+    if (v[mid] >= target) {
+      // This is either the target or where the target would go.
+      // Move left to see if there's an even earlier valid position.
+      high = mid - 1;
+    } else {
+      // Too small, must look to the right.
+      low = mid + 1;
     }
-    // 'l' points to the correct insertion index.
-    return l;
+  }
+  // 'low' points to the correct insertion index.
+  return low;
 }
