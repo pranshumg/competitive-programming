@@ -6,19 +6,19 @@ using namespace std;
    TC - O(log n), SC - O(1)
 */
 int floor(vector<int>& v, int n, int target) {
-    int l = 0, h = n - 1;
-    while (l <= h) {
-        int m = l + ((h - l) >> 1);
-        if (v[m] <= target) {
-            // v[m] is a valid candidate for floor, 
-            // so we look to the right to see if a larger valid index exists.
-            l = m + 1;
-        } else {
-            // v[m] is too large, move the search left.
-            h = m - 1;
-        }
+  int low = 0, high = n - 1;
+  while (low <= high) {
+    int mid = low + (high - low) / 2;
+    if (v[mid] <= target) {
+      // v[mid] is a valid candidate for floor, 
+      // so we look to the right to see if a larger valid index exists.
+      low = mid + 1;
+    } else {
+      // v[mid] is too large, move the search left.
+      high = mid - 1;
     }
-    // After the loop, 'h' will be the largest index such that v[h] <= target.
-    // If no such element exists, 'h' will naturally become -1.
-    return h;
+  }
+  // After the loop, 'high' will be the largest index such that v[high] <= target.
+  // If no such element exists, 'high' will naturally become -1.
+  return high;
 }
