@@ -17,7 +17,7 @@ int ceil(vector<int>& v, int n, int target) {
       low = mid + 1;
     }
   }   
-  // 'low' will point to the first index where v[i] >= target.
-  // Note: If target > v[n-1], 'low' will be equal to 'n'.
+  // low will point to the first index where v[i] >= target.
+  // Note: If target > v[n-1], low will be equal to 'n'.
   return low;
 }
