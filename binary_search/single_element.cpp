@@ -22,7 +22,7 @@ int single(vector<int>& v, int n) {
     if ((mid & 1 && v[mid] == v[mid - 1]) || (!(mid & 1) && v[mid] == v[mid + 1])) {
       low = mid + 1;
     } else {
-      high = mid - 1; // Fixed: move high to the left
+      high = mid - 1; 
     }
   }
   return -1;
