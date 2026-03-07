@@ -5,7 +5,7 @@ using namespace std;
 /* Minimum in rotated sorted array */
 
 // TC - O(log n), SC - O(1)
-int minimum(vector<int>& v, int n, int target) { 
+int minimum(vector<int>& v, int n) { 
   int low = 0, high = n - 1;
   int ans = 1e9; 
   while (low <= high) {
