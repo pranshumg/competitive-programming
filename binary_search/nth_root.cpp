@@ -2,36 +2,39 @@
 
 using namespace std;
 
-/* Nth root of an integer */
-// return 0 if == m
-// return 1 if < m
-// return 2 if > m
-int mul(int mid, int n, int m) {
+/* Find the nth root of an integer */
+
+// Helper Function: Binary Exponentiation (Fast Power)
+// Computes x^y in O(log y).
+int f(int x, int y) {
   int ans = 1;
-  for (int i = 1; i <= n; i++) {
-    ans *= mid;
-    if (ans > m) {
-      return 2;
+  while (y) {
+    // If y is odd, multiply the current result by x
+    if (y & 1) {
+      ans *= x;
     }
+    // Square the base and halve the exponent
+    x *= x;
+    y >>= 1; 
   }
-  if (ans < m) {
-    return 1;
-  }
-  return 0;
+  return ans;
 }
 
-int root(int n, int m) {
+// TC - O(log m * log n), SC - O(1)
+int nth_root(int n, int m) {
+  // Edge case: nth root of 1 is always 1
+  if (m == 1) return 1;
   int low = 1, high = m;
   while (low <= high) {
-    int mid = (low + high) / 2;
-    int midN = mul(mid, n, m);
-    if (midN == 0) {
-      return mid;
-    } else if (midN == 2) {
-      high = mid - 1;
+    int mid = low + (high - low) / 2;
+    int root = f(mid, n);
+    if (root == m) {
+      return mid; // Found the exact integer root
+    } else if (root < m) {
+      low = mid + 1; // mid^n is too small, search higher
     } else {
-      low = mid + 1;
+      high = mid - 1; // mid^n is too large, search lower
     }
   }
-  return -1;
+  return -1; // No perfect integer nth root found
 }
