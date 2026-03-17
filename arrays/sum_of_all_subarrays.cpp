@@ -4,7 +4,7 @@ using namespace std;
 
 /* Sum of all subarrays */
 
-// Using prefix sum
+// prefix sum
 // TC - O(n), SC - O(n)
 int64_t sum(vector<int>& v, int n) {
   vector<int64_t> pfx(n + 1, 0);
@@ -18,7 +18,7 @@ int64_t sum(vector<int>& v, int n) {
   return ans;
 }
 
-// Using math
+// math
 // TC - O(n), SC - O(1)
 int64_t sum(vector<int>& v, int n) {
   int64_t ans = 0;
