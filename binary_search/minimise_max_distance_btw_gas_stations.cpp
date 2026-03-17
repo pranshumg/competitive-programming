@@ -2,6 +2,8 @@
 
 using namespace std;
 
+/* Minimise maximum distance between gas stations */
+
 // APPROACH 1: Greedy with Linear Scan
 // TC - O(k * n), SC - O(n)
 long double minimise(vector<int>& v, int n, int k) {
