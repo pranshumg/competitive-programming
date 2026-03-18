@@ -66,3 +66,31 @@ double median(vector<int>& v1, int n, vector<int>& v2, int m) {
   if ((n + m) & 1) return el1;
   return (el1 + el2) / double(2);
 }
+
+// APPROACH 3: Binary search
+// TC - O(log(min(n, m))), SC - O(1) 
+double median(vector<int>& v1, int m, vector<int>& v2, int n) {
+  if (m > n) return median(v2, n, v1, m); // Fixed recursive call
+  int left = (m + n + 1) / 2;
+  int low = 0, high = m;
+  while (low <= high) {
+    int mid1 = low + (high - low) / 2;
+    int mid2 = left - mid1;
+    // Using standard INT_MIN/MAX to handle all possible array values
+    int l1 = (mid1 == 0) ? INT_MIN : v1[mid1 - 1];
+    int l2 = (mid2 == 0) ? INT_MIN : v2[mid2 - 1];
+    int r1 = (mid1 == m) ? INT_MAX : v1[mid1];
+    int r2 = (mid2 == n) ? INT_MAX : v2[mid2];
+    if (l1 <= r2 && l2 <= r1) {
+      if ((m + n) & 1) {
+        return max(l1, l2);
+      }
+      return (double(max(l1, l2)) + min(r1, r2)) / 2.0;
+    } else if (l1 > r2) {
+      high = mid1 - 1;
+    } else {
+      low = mid1 + 1;
+    }
+  }
+  return 0.0;
+}
