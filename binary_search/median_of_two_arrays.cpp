@@ -70,7 +70,7 @@ double median(vector<int>& v1, int n, vector<int>& v2, int m) {
 // APPROACH 3: Binary search
 // TC - O(log(min(n, m))), SC - O(1) 
 double median(vector<int>& v1, int m, vector<int>& v2, int n) {
-  if (m > n) return median(v2, n, v1, m); // Fixed recursive call
+  if (m > n) return median(v2, n, v1, m); 
   int left = (m + n + 1) / 2;
   int low = 0, high = m;
   while (low <= high) {
