@@ -2,33 +2,29 @@
 
 using namespace std;
 
-/* Row with maximum no. of 1's */
+/* Row with maximum no. of ones */
 
-// Linear search
+// APPROACH 1: Brute Force
 // TC - O(n * m), SC - O(1)
-int row(vector<vector<int>> &v, int n, int m) {
-  int idx = -1, maxi = 0;
+int row(vector<vector<int>>& v, int n, int m) {
+  int mx = 0, idx = -1;
   for (int i = 0; i < n; ++i) {
     int cnt = 0;
     for (int j = 0; j < m; ++j) {
-      if (v[i][j] == 1) {
-        cnt = m - j;
-        break;
-      }
+      cnt += v[i][j];
     }
-    if (cnt > maxi) {
-      maxi = cnt, idx = i;
+    if (cnt > mx) {
+      mx = cnt;
+      idx = i;
     }
   }
   return idx;
 }
 
-// Binary search 
-// TC - O(n * log (m)), SC - O(1)
 int lower_bound(vector<int>& v, int n, int target) {
   int low = 0, high = n - 1;
   while (low <= high) {
-    int mid = (low + high) / 2;
+    int mid = low + (high - low) / 2;
     if (v[mid] >= target) {
       high = mid - 1;
     } else {
@@ -38,12 +34,15 @@ int lower_bound(vector<int>& v, int n, int target) {
   return low;
 }
 
-int row(vector<vector<int>> &v, int n, int m) {
-  int max = 0, idx = -1;
+// APPROACH 2: Binary Search 
+// TC - O(n log m), SC - O(1)
+int row(vector<vector<int>>& v, int n, int m) {
+  int mx = 0, idx = -1;
   for (int i = 0; i < n; ++i) {
     int cnt = m - lower_bound(v[i], m, 1);
-    if (cnt > max) {
-      max = cnt, idx = i;
+    if (cnt > mx) {
+      mx = cnt;
+      idx = i;
     }
   }
   return idx;
