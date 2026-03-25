@@ -1,7 +1,12 @@
-//    author:  Pranshu Gupta
 #include <bits/stdc++.h>
 
 using namespace std;
+
+#ifdef PRANSHU_DEBUG
+#include "debug.h"
+#else
+#define dbg(...)
+#endif
 
 int main() {
   ios::sync_with_stdio(false);
