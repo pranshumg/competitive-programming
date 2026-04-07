@@ -5,7 +5,7 @@ using namespace std;
 #ifdef PRANSHU_DEBUG
 #include "debug.h"
 #else
-#define dbg(...)
+#define dbg(...) 24
 #endif
 
 int main() {
