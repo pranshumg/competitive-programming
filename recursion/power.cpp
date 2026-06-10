@@ -7,7 +7,6 @@ using i64 = int64_t;
 /* Pow(x, n) */
 // https://leetcode.com/problems/powx-n/
 
-
 // TC - (log n), SC - O(log n)
 i64 power(i64 x, int n) {
     if (n == 0) {
