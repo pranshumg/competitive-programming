@@ -18,7 +18,7 @@ void find_combination(int idx, int n, int target, vector<int>& v, vector<int>& t
 }
 
 // Hashset
-// TC - O(2^n * n * log m), SC - O(n) where n = no. of candidates, m = no. of stored combinations
+// TC - O(2^n * n * log m), SC - O(2^n * n) where n = no. of candidates, m = no. of stored combinations
 vector<vector<int>> combination_sum_2(vector<int>& v, int target) {
     sort(v.begin(), v.end());
     vector<int> tmp;
@@ -44,7 +44,7 @@ void find_combination(int idx, int n, int target, vector<int>& v, vector<int>& t
 }
 
 // Optimal
-// TC - O(2^n * n), SC - O(n) where n = no. of candidates
+// TC - O(2^n * n), SC - O(2^n * n) where n = no. of candidates
 vector<vector<int>> combination_sum_2(vector<int>& v, int target) {
     sort(v.begin(), v.end());
     vector<int> tmp;

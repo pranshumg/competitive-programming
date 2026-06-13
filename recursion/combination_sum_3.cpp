@@ -19,7 +19,7 @@ void find_combination(int cur, int mx, int n, int k, vector<int>& tmp, vector<ve
     find_combination(cur + 1, mx, n, k, tmp, res);
 }
 
-// TC - O(C(9, k)), SC - O(k) where k is maximum depth
+// TC - O(2^9 * k), SC - O(k) where k is maximum depth
 vector<vector<int>> combination_sum_3(int k, int n) {
     vector<int> tmp;
     vector<vector<int>> res;
