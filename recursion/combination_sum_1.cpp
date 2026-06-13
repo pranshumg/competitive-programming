@@ -17,7 +17,8 @@ void find_combination(int idx, int n, int target, vector<int>& v, vector<int>& t
     find_combination(idx + 1, n, target, v, tmp, res);
 }
 
-// TC - O(n^(t/m)), SC - O(t/m) where n = no. of candidates, t = target, m = minimum value in candidates
+// TC - O(2^t * k) due to exploring all combinations up to the target with copying each valid combination of average length k.
+// SC - O(k * x) to store all valid combinations, where x is the number of combinations and k is their average length.
 vector<vector<int>> combination_sum(vector<int>& v, int target) {
     vector<int> tmp;
     vector<vector<int>> res; 

@@ -4,7 +4,7 @@ using namespace std;
 
 /* Print subsequences */
 
-// TC - O(2^n * n), SC - O(n)
+// TC - O(2^n * n), SC - O(2^n * n)
 void subsequences(vector<int>& v, int idx, int n, vector<int>& res) {
     if (idx >= n) {
         for (auto& a : res) {
